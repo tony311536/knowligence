@@ -1,0 +1,541 @@
+{
+  "metadata": {
+    "id": "hospitality",
+    "name": "Knowligence · 酒店节能探索",
+    "name_en": "Knowligence · Hospitality energy explorer",
+    "title": "酒店节能探索",
+    "title_en": "Hospitality energy explorer",
+    "description": "循着 ENERGY STAR 与 EPA WaterSense 的官方指南，梳理酒店用能评估、客房照明控制、节水管理与维护线索。",
+    "description_en": "Follow ENERGY STAR and EPA WaterSense official guidance across hotel energy profiling, lighting controls, water management, and maintenance.",
+    "curation": "人工精选的 ENERGY STAR 与 EPA WaterSense 公开指南释义与自建运维练习样例；不是某家酒店的实测台账、财务回报计算或合规认证服务。",
+    "curation_en": "Curated paraphrases of public ENERGY STAR and EPA WaterSense guidance plus self-authored operational sample notes; not measured hotel utility data, financial ROI modeling, or compliance certification.",
+    "verified_at": "2026-10-26",
+    "scope": [
+      "baseline",
+      "lighting",
+      "controls",
+      "water",
+      "maintenance"
+    ],
+    "versionLabel": "资料集",
+    "versionLabel_en": "Collection",
+    "versionMode": "collection",
+    "versions": [
+      {
+        "id": "baseline",
+        "label": "基线与规划",
+        "label_en": "Baseline & planning"
+      },
+      {
+        "id": "operations",
+        "label": "运营与维护",
+        "label_en": "Operations & maintenance"
+      }
+    ],
+    "topics": [
+      {
+        "id": "baseline",
+        "label": "基线与评估",
+        "label_en": "Baseline & profiling",
+        "keywords": [
+          "基线",
+          "用能特征",
+          "能耗评估",
+          "能源计划",
+          "气候",
+          "业务活动",
+          "profile",
+          "profiling",
+          "baseline",
+          "energy plan",
+          "energy use",
+          "climate",
+          "business activity"
+        ]
+      },
+      {
+        "id": "lighting",
+        "label": "照明与采光",
+        "label_en": "Lighting & daylight",
+        "keywords": [
+          "照明",
+          "灯具",
+          "自然采光",
+          "采光",
+          "大堂",
+          "走廊照明",
+          "lighting",
+          "daylight",
+          "guestrooms",
+          "guestroom lighting",
+          "lobbies",
+          "lobby",
+          "hallways",
+          "hallway"
+        ]
+      },
+      {
+        "id": "controls",
+        "label": "感应与调光控制",
+        "label_en": "Occupancy & dimming controls",
+        "keywords": [
+          "控制措施",
+          "照明控制",
+          "入住感应",
+          "占用控制",
+          "感应控制",
+          "调光",
+          "定时控制",
+          "全黑走廊",
+          "客房控制",
+          "occupancy",
+          "occupancy-based",
+          "control",
+          "controls",
+          "lighting control",
+          "lighting controls",
+          "guest-room control",
+          "guest-room controls",
+          "scheduling",
+          "dimming",
+          "感应器",
+          "低人流",
+          "sensors",
+          "daylight controls"
+        ]
+      },
+      {
+        "id": "water",
+        "label": "用水与节水器具",
+        "label_en": "Water & fixtures",
+        "keywords": [
+          "用水",
+          "节水",
+          "水管理计划",
+          "洗衣房",
+          "餐饮厨房",
+          "卫生间",
+          "绿化灌溉",
+          "高效热水",
+          "卫浴器具",
+          "WaterUSE",
+          "H2Otel",
+          "工作表",
+          "评估表",
+          "water",
+          "watersense",
+          "water management",
+          "restrooms",
+          "laundry",
+          "landscaping",
+          "kitchens",
+          "food service",
+          "bathroom fixtures",
+          "water heating",
+          "worksheets"
+        ]
+      },
+      {
+        "id": "maintenance",
+        "label": "漏损与密封维护",
+        "label_en": "Leaks & envelope maintenance",
+        "keywords": [
+          "漏水",
+          "检漏",
+          "维修",
+          "门窗密封",
+          "暖通缝隙",
+          "维护",
+          "leaks",
+          "leak",
+          "repair",
+          "sealing",
+          "doors",
+          "windows",
+          "hvac",
+          "hvac gaps",
+          "maintenance"
+        ]
+      }
+    ],
+    "suggestions": [
+      "如何制定酒店能源与节水基线计划？",
+      "客房、大堂和走廊可以采取哪些照明与控制措施？",
+      "日常节水与维护如何处理漏水及门窗暖通缝隙？"
+    ],
+    "suggestions_en": [
+      "How should a hotel build an energy and water baseline plan?",
+      "What lighting and control measures apply to guestrooms, lobbies, and hallways?",
+      "How does routine maintenance address water leaks and HVAC door or window gaps?"
+    ],
+    "license_note": "仅收录原创中英文释义与官方页面链接；未复制官方长文、定量节能量百分比、旧灯具型号推荐或真实酒店经营数据。",
+    "license_note_en": "Original bilingual paraphrases and official links only; no copied long passages, quantitative savings percentages, legacy lamp recommendations, or real hotel operational data.",
+    "sampleQuestion": "如何制定酒店能源与节水基线计划？",
+    "sampleQuestion_en": "How should a hotel build an energy and water baseline plan?",
+    "tagLine": "从公用事业指南到日常巡检，每条运维建议都有据可查。",
+    "tagLine_en": "From utility guidance to daily checks, keep every operational tip grounded in sources.",
+    "prompts": [
+      {
+        "question": "如何制定酒店能源与节水基线计划？",
+        "question_en": "How should a hotel build an energy and water baseline plan?",
+        "label": "建立基线",
+        "label_en": "Build a baseline",
+        "collection": "baseline",
+        "topics": [
+          "baseline",
+          "water"
+        ]
+      },
+      {
+        "question": "客房、大堂和走廊可以采取哪些照明与控制措施？",
+        "question_en": "What lighting and control measures apply to guestrooms, lobbies, and hallways?",
+        "label": "照明与控制",
+        "label_en": "Lighting & controls",
+        "collection": "operations",
+        "topics": [
+          "lighting",
+          "controls"
+        ]
+      },
+      {
+        "question": "日常节水与维护如何处理漏水及门窗暖通缝隙？",
+        "question_en": "How does routine maintenance address water leaks and HVAC door or window gaps?",
+        "label": "巡检与维护",
+        "label_en": "Maintenance checks",
+        "collection": "operations",
+        "topics": [
+          "water",
+          "maintenance"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "HSP-S-ESTAR-BASELINE",
+      "title": "ENERGY STAR · 旅宿业能源特征评估",
+      "title_en": "ENERGY STAR · Lodging energy use profiling",
+      "url": "https://www.energystar.gov/buildings/resources-audience/small-biz/lodging",
+      "canonical_url": "https://www.energystar.gov/buildings/resources-audience/small-biz/lodging",
+      "publisher": "U.S. EPA / ENERGY STAR",
+      "section": "How to profile your energy use",
+      "version": "baseline",
+      "kind": "official-guidance",
+      "verified_at": "2026-10-26",
+      "excerpt": "酒店应结合自身物业条件定制能源计划；实际能耗随气候区域、所装设备与业务活动水平而变化。",
+      "excerpt_en": "Hotels should tailor an energy plan to their specific property; energy use varies with climate, installed equipment, and business activity.",
+      "summary": "酒店应结合自身物业条件定制能源计划；实际能耗随气候区域、所装设备与业务活动水平而变化。",
+      "summary_en": "Hotels should tailor an energy plan to their specific property; energy use varies with climate, installed equipment, and business activity."
+    },
+    {
+      "id": "HSP-S-ESTAR-TIPS",
+      "title": "ENERGY STAR · 酒店节能运营建议",
+      "title_en": "ENERGY STAR · Tips for saving energy at your hotel",
+      "url": "https://www.energystar.gov/buildings/resources-audience/small-biz/lodging",
+      "canonical_url": "https://www.energystar.gov/buildings/resources-audience/small-biz/lodging",
+      "publisher": "U.S. EPA / ENERGY STAR",
+      "section": "Tips for saving energy and money at your hotel",
+      "version": "operations",
+      "kind": "official-guidance",
+      "verified_at": "2026-10-26",
+      "excerpt": "运营措施涵盖客房、大堂与走廊照明升级及自然采光利用、基于入住状态的客房控制、走廊定时调光结合感应控制（避免走廊全黑）、高效热水系统，以及密封门窗和暖通空调缝隙。",
+      "excerpt_en": "Operational tips include lighting upgrades in guestrooms, lobbies, and halls, using daylight, occupancy-based guest-room controls, hallway scheduling and dimming with occupancy controls to avoid dark hallways, efficient water heating, and sealing door, window, and HVAC gaps.",
+      "summary": "运营措施涵盖客房、大堂与走廊照明升级及自然采光利用、基于入住状态的客房控制、走廊定时调光结合感应控制（避免走廊全黑）、高效热水系统，以及密封门窗和暖通空调缝隙。",
+      "summary_en": "Operational tips include lighting upgrades in guestrooms, lobbies, and halls, using daylight, occupancy-based guest-room controls, hallway scheduling and dimming with occupancy controls to avoid dark hallways, efficient water heating, and sealing door, window, and HVAC gaps."
+    },
+    {
+      "id": "HSP-S-EPA-BASELINE",
+      "title": "EPA WaterSense · 酒店用水结构与管理计划",
+      "title_en": "EPA WaterSense · Hotel water uses and management plan",
+      "url": "https://www.epa.gov/watersense/types-facilities#hotels",
+      "canonical_url": "https://www.epa.gov/watersense/types-facilities#hotels",
+      "publisher": "U.S. Environmental Protection Agency (EPA)",
+      "section": "Hotels — Water use profile and management plan",
+      "version": "baseline",
+      "kind": "official-guidance",
+      "verified_at": "2026-10-26",
+      "excerpt": "酒店主要用水分布在卫生间、洗衣房、景观绿化与厨房；指南建议制定水管理计划，评估用水状况并持续跟踪结果，同时评估洗衣房与餐饮服务的改进机会。",
+      "excerpt_en": "Major hotel water uses include restrooms, laundry, landscaping, and kitchens; facilities should develop a water management plan, assess water use, track results, and evaluate laundry and food service for opportunities.",
+      "summary": "酒店主要用水分布在卫生间、洗衣房、景观绿化与厨房；指南建议制定水管理计划，评估用水状况并持续跟踪结果，同时评估洗衣房与餐饮服务的改进机会。",
+      "summary_en": "Major hotel water uses include restrooms, laundry, landscaping, and kitchens; facilities should develop a water management plan, assess water use, track results, and evaluate laundry and food service for opportunities."
+    },
+    {
+      "id": "HSP-S-EPA-OPS",
+      "title": "EPA WaterSense · 酒店节水器具与检漏维护",
+      "title_en": "EPA WaterSense · Hotel fixtures and leak maintenance",
+      "url": "https://www.epa.gov/watersense/types-facilities#hotels",
+      "canonical_url": "https://www.epa.gov/watersense/types-facilities#hotels",
+      "publisher": "U.S. Environmental Protection Agency (EPA)",
+      "section": "Hotels — Fixtures and leak repair",
+      "version": "operations",
+      "kind": "official-guidance",
+      "verified_at": "2026-10-26",
+      "excerpt": "日常节水运维包括排查漏水并及时修复，以及选用高效卫浴器具。",
+      "excerpt_en": "Routine water-saving operations include checking for leaks and repairing them promptly, alongside using efficient bathroom fixtures.",
+      "summary": "日常节水运维包括排查漏水并及时修复，以及选用高效卫浴器具。",
+      "summary_en": "Routine water-saving operations include checking for leaks and repairing them promptly, alongside using efficient bathroom fixtures."
+    },
+    {
+      "id": "HSP-S-ESTAR-CHECKLIST",
+      "title": "ENERGY STAR · 旅宿业能效与节水巡检清单",
+      "title_en": "ENERGY STAR · Hotel energy and water efficiency checklist",
+      "url": "https://www.energystar.gov/sites/default/files/2024-06/Energy%20Checklist_Hotels_new_2024.pdf",
+      "canonical_url": "https://www.energystar.gov/sites/default/files/2024-06/Energy%20Checklist_Hotels_new_2024.pdf",
+      "publisher": "U.S. EPA / ENERGY STAR",
+      "section": "Pages 2–3: Lighting assessment, sensors, and daylight controls",
+      "version": "operations",
+      "kind": "official-guidance",
+      "verified_at": "2026-11-10",
+      "excerpt": "清单第 2–3 页建议评估高效照明配置，识别并评估低人流区域安装占用/动作感应器的机会，并分别评估自然采光调光控制机会。",
+      "excerpt_en": "Pages 2–3 advise assessing efficient lighting opportunities, identifying and assessing opportunities for occupancy/motion sensors in low-traffic areas, and separately daylight dimming controls.",
+      "summary": "清单第 2–3 页建议评估高效照明配置，识别并评估低人流区域安装占用/动作感应器的机会，并分别评估自然采光调光控制机会。",
+      "summary_en": "Pages 2–3 advise assessing efficient lighting opportunities, identifying and assessing opportunities for occupancy/motion sensors in low-traffic areas, and separately daylight dimming controls."
+    },
+    {
+      "id": "HSP-S-EPA-H2OTEL",
+      "title": "EPA WaterSense · H2Otel 节水挑战与评估工具",
+      "title_en": "EPA WaterSense · H2Otel Challenge and assessment worksheets",
+      "url": "https://www.epa.gov/watersense/h2otel-challenge",
+      "canonical_url": "https://www.epa.gov/watersense/h2otel-challenge",
+      "publisher": "U.S. Environmental Protection Agency (EPA)",
+      "section": "WaterUSE tool and assessment worksheets",
+      "version": "baseline",
+      "kind": "official-guidance",
+      "verified_at": "2026-11-10",
+      "excerpt": "酒店运营方可借助 WaterUSE 工具和评估工作表，识别并确定节水改进机会的优先级。",
+      "excerpt_en": "Hotel operators can use WaterUSE and assessment worksheets to identify and prioritize water-efficiency opportunities.",
+      "summary": "酒店运营方可借助 WaterUSE 工具和评估工作表，识别并确定节水改进机会的优先级。",
+      "summary_en": "Hotel operators can use WaterUSE and assessment worksheets to identify and prioritize water-efficiency opportunities."
+    }
+  ],
+  "claims": [
+    {
+      "id": "HSP-C-BASE-TAILOR",
+      "topic": "baseline",
+      "title": "结合物业条件定制能源计划",
+      "title_en": "Tailor the energy plan to the property",
+      "text": "酒店应根据自身物业特点定制能源计划；实际用能会随气候条件、设备配置与业务活动水平而变化。",
+      "text_en": "A hotel should tailor its energy plan to the specific property because energy use varies with climate, equipment, and business activity.",
+      "statement": "酒店应根据自身物业特点定制能源计划；实际用能会随气候条件、设备配置与业务活动水平而变化。",
+      "statement_en": "A hotel should tailor its energy plan to the specific property because energy use varies with climate, equipment, and business activity.",
+      "version": "baseline",
+      "source_ids": [
+        "HSP-S-ESTAR-BASELINE"
+      ]
+    },
+    {
+      "id": "HSP-C-WATER-PROFILE",
+      "topic": "water",
+      "title": "识别四大主要用水区域",
+      "title_en": "Identify four major hotel water-use areas",
+      "text": "EPA WaterSense 指出酒店的主要用水区域涵盖卫生间、洗衣房、景观绿化与厨房。",
+      "text_en": "EPA WaterSense identifies restrooms, laundry, landscaping, and kitchens as major hotel water uses.",
+      "statement": "EPA WaterSense 指出酒店的主要用水区域涵盖卫生间、洗衣房、景观绿化与厨房。",
+      "statement_en": "EPA WaterSense identifies restrooms, laundry, landscaping, and kitchens as major hotel water uses.",
+      "version": "baseline",
+      "source_ids": [
+        "HSP-S-EPA-BASELINE"
+      ]
+    },
+    {
+      "id": "HSP-C-WATER-PLAN",
+      "topic": "baseline",
+      "title": "制定水管理计划并评估洗衣与餐饮",
+      "title_en": "Build a water plan and evaluate laundry and food service",
+      "text": "酒店应制定水管理计划，评估用水现状并跟踪结果，同时评估洗衣房和餐饮服务中的节水机会。",
+      "text_en": "Hotels should develop a water management plan, assess water use and track results, and evaluate laundry and food service for improvement opportunities.",
+      "statement": "酒店应制定水管理计划，评估用水现状并跟踪结果，同时评估洗衣房和餐饮服务中的节水机会。",
+      "statement_en": "Hotels should develop a water management plan, assess water use and track results, and evaluate laundry and food service for improvement opportunities.",
+      "version": "baseline",
+      "source_ids": [
+        "HSP-S-EPA-BASELINE"
+      ]
+    },
+    {
+      "id": "HSP-C-LIGHT-UPGRADE",
+      "topic": "lighting",
+      "title": "升级客房、大堂与走廊照明并利用自然光",
+      "title_en": "Upgrade guestroom, lobby, and hall lighting and use daylight",
+      "text": "在客房、大堂和走廊实施照明升级，并利用自然采光减少人工电照明需求。",
+      "text_en": "Upgrade lighting in guestrooms, lobbies, and hallways, and use daylight to reduce the need for electric lighting.",
+      "statement": "在客房、大堂和走廊实施照明升级，并利用自然采光减少人工电照明需求。",
+      "statement_en": "Upgrade lighting in guestrooms, lobbies, and hallways, and use daylight to reduce the need for electric lighting.",
+      "version": "operations",
+      "source_ids": [
+        "HSP-S-ESTAR-TIPS"
+      ]
+    },
+    {
+      "id": "HSP-C-CTRL-GUESTROOM",
+      "topic": "controls",
+      "title": "配置基于入住状态的客房控制",
+      "title_en": "Use occupancy-based guest-room controls",
+      "text": "ENERGY STAR 建议采用基于入住感应的客房控制策略，减少空置期间的不必要用能。",
+      "text_en": "ENERGY STAR recommends occupancy-based guest-room controls to curb unnecessary energy use when rooms are unoccupied.",
+      "statement": "ENERGY STAR 建议采用基于入住感应的客房控制策略，减少空置期间的不必要用能。",
+      "statement_en": "ENERGY STAR recommends occupancy-based guest-room controls to curb unnecessary energy use when rooms are unoccupied.",
+      "version": "operations",
+      "source_ids": [
+        "HSP-S-ESTAR-TIPS"
+      ]
+    },
+    {
+      "id": "HSP-C-CTRL-HALLWAY",
+      "topic": "controls",
+      "title": "走廊定时与调光结合感应以避免全黑",
+      "title_en": "Pair hallway scheduling and dimming with occupancy controls",
+      "text": "走廊可将定时控制、调光与占用感应结合使用，在降低能耗的同时避免出现完全黑暗的走廊。",
+      "text_en": "Combine hallway scheduling and dimming with occupancy controls so corridors save energy while avoiding totally dark hallways.",
+      "statement": "走廊可将定时控制、调光与占用感应结合使用，在降低能耗的同时避免出现完全黑暗的走廊。",
+      "statement_en": "Combine hallway scheduling and dimming with occupancy controls so corridors save energy while avoiding totally dark hallways.",
+      "version": "operations",
+      "source_ids": [
+        "HSP-S-ESTAR-TIPS"
+      ]
+    },
+    {
+      "id": "HSP-C-WATER-OPS",
+      "topic": "water",
+      "title": "结合高效热水与高效卫浴器具",
+      "title_en": "Combine efficient water heating and bathroom fixtures",
+      "text": "运营阶段可推进高效水加热措施，并在卫生间配置高效节水卫浴器具。",
+      "text_en": "Operations can combine efficient water heating practices with efficient bathroom fixtures.",
+      "statement": "运营阶段可推进高效水加热措施，并在卫生间配置高效节水卫浴器具。",
+      "statement_en": "Operations can combine efficient water heating practices with efficient bathroom fixtures.",
+      "version": "operations",
+      "source_ids": [
+        "HSP-S-ESTAR-TIPS",
+        "HSP-S-EPA-OPS"
+      ]
+    },
+    {
+      "id": "HSP-C-MAINT-LEAKS",
+      "topic": "maintenance",
+      "title": "定期查漏并及时修复",
+      "title_en": "Check for water leaks and repair promptly",
+      "text": "EPA WaterSense 强调定期检查漏水点并及时修复，防止持续性的水资源浪费。",
+      "text_en": "EPA WaterSense emphasizes checking for leaks and repairing them promptly to prevent ongoing water loss.",
+      "statement": "EPA WaterSense 强调定期检查漏水点并及时修复，防止持续性的水资源浪费。",
+      "statement_en": "EPA WaterSense emphasizes checking for leaks and repairing them promptly to prevent ongoing water loss.",
+      "version": "operations",
+      "source_ids": [
+        "HSP-S-EPA-OPS"
+      ]
+    },
+    {
+      "id": "HSP-C-MAINT-ENVELOPE",
+      "topic": "maintenance",
+      "title": "密封门窗与穿墙或窗式暖通缝隙",
+      "title_en": "Seal door, window, and HVAC unit gaps",
+      "text": "通过密封门、窗以及穿墙或窗式暖通空调设备周边的缝隙，减少缝隙漏风损失。",
+      "text_en": "Seal gaps around doors, windows, and through-wall or window HVAC units to reduce air leakage.",
+      "statement": "通过密封门、窗以及穿墙或窗式暖通空调设备周边的缝隙，减少缝隙漏风损失。",
+      "statement_en": "Seal gaps around doors, windows, and through-wall or window HVAC units to reduce air leakage.",
+      "version": "operations",
+      "source_ids": [
+        "HSP-S-ESTAR-TIPS"
+      ]
+    },
+    {
+      "id": "HSP-C-WATER-WORKSHEETS",
+      "topic": "water",
+      "title": "借助 WaterUSE 与工作表排定节水机会",
+      "title_en": "Prioritize water opportunities with WaterUSE and worksheets",
+      "text": "EPA WaterSense H2Otel 挑战提出，酒店运营人员可使用 WaterUSE 工具与评估工作表，梳理并优先推进节水改造机会。",
+      "text_en": "The EPA WaterSense H2Otel Challenge notes that hotel operators can use WaterUSE and assessment worksheets to identify and prioritize water-efficiency opportunities.",
+      "statement": "EPA WaterSense H2Otel 挑战提出，酒店运营人员可使用 WaterUSE 工具与评估工作表，梳理并优先推进节水改造机会。",
+      "statement_en": "The EPA WaterSense H2Otel Challenge notes that hotel operators can use WaterUSE and assessment worksheets to identify and prioritize water-efficiency opportunities.",
+      "version": "baseline",
+      "source_ids": [
+        "HSP-S-EPA-H2OTEL"
+      ]
+    },
+    {
+      "id": "HSP-C-CTRL-CHECKLIST",
+      "topic": "controls",
+      "title": "评估高效照明配置并评估低人流区感应与采光调光机会",
+      "title_en": "Assess lighting and assess opportunities for low-traffic sensors and daylight dimming",
+      "text": "ENERGY STAR 巡检清单建议评估高效照明配置，识别并评估在低人流区域安装占用/动作感应器的机会，并分别评估自然采光调光控制机会。",
+      "text_en": "The ENERGY STAR checklist advises assessing efficient lighting, identifying and assessing opportunities for occupancy/motion sensors in low-traffic areas, and separately daylight dimming controls.",
+      "statement": "ENERGY STAR 巡检清单建议评估高效照明配置，识别并评估在低人流区域安装占用/动作感应器的机会，并分别评估自然采光调光控制机会。",
+      "statement_en": "The ENERGY STAR checklist advises assessing efficient lighting, identifying and assessing opportunities for occupancy/motion sensors in low-traffic areas, and separately daylight dimming controls.",
+      "version": "operations",
+      "source_ids": [
+        "HSP-S-ESTAR-CHECKLIST"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "HSP-A-BASELINE-CHECKLIST",
+      "title": "物业用能与用水基线盘点单（自建练习样例）",
+      "title_en": "Property energy and water baseline worksheet (self-authored sample)",
+      "question": "如何制定酒店能源与节水基线计划？",
+      "question_en": "How should a hotel build an energy and water baseline plan?",
+      "text": "# 物业用能与用水基线盘点单（自建练习样例）\n\n- 记录所在气候区、主要设备清单与旺淡季业务活动特征。\n- 按卫生间、洗衣房、景观绿化与餐饮厨房梳理用水观察项，建立水管理计划跟踪表。\n- 注：本件为项目自建 Markdown 运维练习模板，不包含任何真实酒店能耗或水表实测数据。",
+      "text_en": "# Property energy and water baseline worksheet (self-authored sample)\n\n- Record climate context, major equipment inventory, and business activity patterns.\n- Map water review items across restrooms, laundry, landscaping, and kitchens to set up a water management tracking plan.\n- Note: Self-authored Markdown operational practice template; contains no measured hotel utility data.",
+      "topics": [
+        "baseline",
+        "water"
+      ],
+      "source_ids": [
+        "HSP-S-ESTAR-BASELINE",
+        "HSP-S-EPA-BASELINE"
+      ],
+      "kind": "field-note",
+      "origin": "curated-example",
+      "tags": [
+        "hospitality",
+        "self-authored-sample"
+      ],
+      "wikilinks": []
+    },
+    {
+      "id": "HSP-A-LIGHTING-SOP",
+      "title": "客房与公共区照明控制巡检卡（自建练习样例）",
+      "title_en": "Guestroom and public-area lighting control card (self-authored sample)",
+      "question": "客房、大堂和走廊可以采取哪些照明与控制措施？",
+      "question_en": "What lighting and control measures apply to guestrooms, lobbies, and hallways?",
+      "text": "# 客房与公共区照明控制巡检卡（自建练习样例）\n\n- 核对客房、大堂与走廊照明升级范围，标记可利用自然采光的公共区域。\n- 检查客房入住感应控制逻辑，以及走廊定时调光与占用感应联动，确保走廊不会处于全黑状态。\n- 注：本件为项目自建 Markdown 巡检练习卡，非真实酒店运行记录或节能担保。",
+      "text_en": "# Guestroom and public-area lighting control card (self-authored sample)\n\n- Review lighting upgrade areas across guestrooms, lobbies, and hallways, and note daylit zones.\n- Check occupancy-based guest-room controls and hallway scheduling/dimming paired with occupancy sensors so hallways never go totally dark.\n- Note: Self-authored Markdown inspection practice card, not real hotel logs or guaranteed savings.",
+      "topics": [
+        "lighting",
+        "controls"
+      ],
+      "source_ids": [
+        "HSP-S-ESTAR-TIPS"
+      ],
+      "kind": "field-note",
+      "origin": "curated-example",
+      "tags": [
+        "hospitality",
+        "self-authored-sample"
+      ],
+      "wikilinks": []
+    },
+    {
+      "id": "HSP-A-MAINTENANCE-LOG",
+      "title": "检漏、热水与围护密封维护记录表（自建练习样例）",
+      "title_en": "Leak repair, water heating, and sealing log (self-authored sample)",
+      "question": "日常节水与维护如何处理漏水及门窗暖通缝隙？",
+      "question_en": "How does routine maintenance address water leaks and HVAC door or window gaps?",
+      "text": "# 检漏、热水与围护密封维护记录表（自建练习样例）\n\n- 排查卫生间与后勤管线漏水点并记录及时修复情况，核对高效卫浴器具与高效水加热设备状态。\n- 检查门框、窗缝与暖通空调接口密封条，封堵气流泄漏缝隙。\n- 注：本件为项目自建 Markdown 维护记录模板，不含实测读数或投资回报测算。",
+      "text_en": "# Leak repair, water heating, and sealing log (self-authored sample)\n\n- Inspect restrooms and service lines for leaks, log prompt repairs, and check efficient bathroom fixtures and water heating equipment.\n- Inspect door frames, windows, and HVAC joints to seal air gaps.\n- Note: Self-authored Markdown maintenance template with no measured readings or ROI estimates.",
+      "topics": [
+        "water",
+        "maintenance"
+      ],
+      "source_ids": [
+        "HSP-S-ESTAR-TIPS",
+        "HSP-S-EPA-OPS"
+      ],
+      "kind": "field-note",
+      "origin": "curated-example",
+      "tags": [
+        "hospitality",
+        "self-authored-sample"
+      ],
+      "wikilinks": []
+    }
+  ]
+}

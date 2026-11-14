@@ -1,0 +1,446 @@
+{
+  "metadata": {
+    "id": "astronomy",
+    "name": "Knowligence · 天文数据探险",
+    "name_en": "Knowligence · Astronomy explorer",
+    "title": "天文数据探险",
+    "title_en": "Astronomy field lab",
+    "description": "从恒星光变走到系外行星大气，循着 NASA 与 ESA 的来源追问证据。",
+    "description_en": "Follow NASA and ESA evidence from starlight to exoplanet atmospheres.",
+    "curation": "人工精选的公开科普资料与历史观测解释；不是实时观测、天体目录或科学分析管线。",
+    "curation_en": "A curated set of public explainers and a historical observation case; not live observations, a celestial catalog, or a scientific analysis pipeline.",
+    "verified_at": "2026-10-20",
+    "scope": [
+      "exoplanet",
+      "transit",
+      "spectrum",
+      "lightyear",
+      "webb"
+    ],
+    "versionLabel": "资料集",
+    "versionLabel_en": "Collection",
+    "versionMode": "collection",
+    "versions": [
+      {
+        "id": "overview",
+        "label": "宇宙入门",
+        "label_en": "Cosmic foundations"
+      },
+      {
+        "id": "observation",
+        "label": "观测方法",
+        "label_en": "Observation methods"
+      }
+    ],
+    "topics": [
+      {
+        "id": "exoplanet",
+        "label": "系外行星",
+        "label_en": "Exoplanets",
+        "keywords": [
+          "系外行星",
+          "exoplanet",
+          "exoplanets"
+        ]
+      },
+      {
+        "id": "transit",
+        "label": "凌日与光变",
+        "label_en": "Transits & light curves",
+        "keywords": [
+          "凌日",
+          "光变",
+          "transit",
+          "transits",
+          "light curve",
+          "light curves"
+        ]
+      },
+      {
+        "id": "spectrum",
+        "label": "光谱与证据",
+        "label_en": "Spectra & evidence",
+        "keywords": [
+          "光谱",
+          "水信号",
+          "水蒸气",
+          "spectrum",
+          "spectra",
+          "spectroscopy",
+          "water signal",
+          "water vapor",
+          "GJ 486"
+        ]
+      },
+      {
+        "id": "lightyear",
+        "label": "光年与距离",
+        "label_en": "Light-years & distance",
+        "keywords": [
+          "光年",
+          "light-year",
+          "light-years",
+          "light year",
+          "light years"
+        ]
+      },
+      {
+        "id": "webb",
+        "label": "Webb 太空望远镜",
+        "label_en": "Webb Space Telescope",
+        "keywords": [
+          "Webb",
+          "JWST",
+          "韦布",
+          "韦伯"
+        ]
+      }
+    ],
+    "suggestions": [
+      "凌日法如何发现系外行星？",
+      "光年是时间还是距离？",
+      "GJ 486 b 的水蒸气信号能直接证明大气吗？"
+    ],
+    "suggestions_en": [
+      "How does the transit method find exoplanets?",
+      "Is a light-year time or distance?",
+      "Does the GJ 486 b water signal establish a planetary atmosphere?"
+    ],
+    "license_note": "仅收录原创中英文释义与官方页面链接；未复制官方图片、原始观测数据或大段原文。",
+    "license_note_en": "Original bilingual paraphrases and official source links only; no copied official imagery, raw measurements, or long excerpts.",
+    "sampleQuestion": "凌日法如何发现系外行星？",
+    "sampleQuestion_en": "How does the transit method find exoplanets?",
+    "tagLine": "从一束星光，追到一条证据。",
+    "tagLine_en": "Follow a beam of light to its evidence.",
+    "prompts": [
+      {
+        "question": "凌日法如何发现系外行星？",
+        "question_en": "How does the transit method find exoplanets?",
+        "label": "循着光变",
+        "label_en": "Follow a light curve"
+      },
+      {
+        "question": "光年是时间还是距离？",
+        "question_en": "Is a light-year time or distance?",
+        "label": "理解光年",
+        "label_en": "Understand light-years"
+      },
+      {
+        "question": "GJ 486 b 的水蒸气信号能直接证明大气吗？",
+        "question_en": "Does the GJ 486 b water signal establish a planetary atmosphere?",
+        "label": "追问水信号",
+        "label_en": "Question a water signal"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "AST-S-EXOPLANET",
+      "title": "NASA · 什么是系外行星",
+      "title_en": "NASA · What is an exoplanet?",
+      "url": "https://science.nasa.gov/exoplanets/what-is-an-exoplanet/",
+      "version": "overview",
+      "kind": "official-explainer",
+      "verified_at": "2026-10-20",
+      "excerpt": "系外行星包括环绕其他恒星的世界；它们的大小、温度与轨道各不相同，也存在不绕恒星运行的流浪行星。",
+      "excerpt_en": "Exoplanets include worlds orbiting other stars, with varied sizes, temperatures, and orbits; rogue planets do not orbit a star.",
+      "summary": "系外行星包括环绕其他恒星的世界；它们的大小、温度与轨道各不相同，也存在不绕恒星运行的流浪行星。",
+      "summary_en": "Exoplanets include worlds orbiting other stars, with varied sizes, temperatures, and orbits; rogue planets do not orbit a star."
+    },
+    {
+      "id": "AST-S-LIGHTYEAR",
+      "title": "NASA · 什么是光年",
+      "title_en": "NASA · What is a light-year?",
+      "url": "https://science.nasa.gov/exoplanets/what-is-a-light-year/",
+      "version": "overview",
+      "kind": "official-explainer",
+      "verified_at": "2026-10-20",
+      "excerpt": "光年衡量光在一年中传播的距离，约为 9.46 万亿千米。这里只采用单位解释，不沿用页面中的旧发现总数。",
+      "excerpt_en": "A light-year measures how far light travels in one year: about 9.46 trillion kilometers. This sample uses the unit explanation, not the page’s older discovery totals.",
+      "summary": "光年衡量光在一年中传播的距离，约为 9.46 万亿千米。这里只采用单位解释，不沿用页面中的旧发现总数。",
+      "summary_en": "A light-year measures how far light travels in one year: about 9.46 trillion kilometers. This sample uses the unit explanation, not the page’s older discovery totals."
+    },
+    {
+      "id": "AST-S-TRANSIT",
+      "title": "NASA · 如何寻找与刻画系外行星",
+      "title_en": "NASA · How we find and characterize",
+      "url": "https://science.nasa.gov/exoplanets/how-we-find-and-characterize/",
+      "version": "observation",
+      "kind": "official-explainer",
+      "verified_at": "2026-10-20",
+      "excerpt": "凌日法寻找行星经过恒星前方时造成的微小亮度下降。结合轨道周期和恒星质量，可推算轨道尺度。",
+      "excerpt_en": "The transit method detects small dips in starlight as a planet crosses in front of its star. Orbital period and stellar mass help determine orbital scale.",
+      "summary": "凌日法寻找行星经过恒星前方时造成的微小亮度下降。结合轨道周期和恒星质量，可推算轨道尺度。",
+      "summary_en": "The transit method detects small dips in starlight as a planet crosses in front of its star. Orbital period and stellar mass help determine orbital scale."
+    },
+    {
+      "id": "AST-S-SPECTRUM",
+      "title": "ESA/Webb · 光谱仪与光谱学",
+      "title_en": "ESA/Webb · Spectrograph and spectroscopy",
+      "url": "https://esawebb.org/wordbank/spectrograph-spectroscopy/",
+      "version": "observation",
+      "kind": "official-explainer",
+      "verified_at": "2026-10-20",
+      "excerpt": "光谱仪把光按波长展开；光谱特征帮助研究物质成分。Webb 的四台科学仪器均具有光谱观测能力。",
+      "excerpt_en": "Spectrographs disperse light by wavelength. Spectral features help study composition, and all four Webb science instruments have spectroscopic capabilities.",
+      "summary": "光谱仪把光按波长展开；光谱特征帮助研究物质成分。Webb 的四台科学仪器均具有光谱观测能力。",
+      "summary_en": "Spectrographs disperse light by wavelength. Spectral features help study composition, and all four Webb science instruments have spectroscopic capabilities."
+    },
+    {
+      "id": "AST-S-WEBB",
+      "title": "NASA · Webb 科学主题",
+      "title_en": "NASA · Webb science themes",
+      "url": "https://science.nasa.gov/mission/webb/science-overview/",
+      "version": "overview",
+      "kind": "official-explainer",
+      "verified_at": "2026-10-20",
+      "excerpt": "Webb 的四个主要科学主题为早期宇宙、星系演化、恒星生命周期和其他世界。",
+      "excerpt_en": "Webb’s four main science themes are the early universe, galaxies over time, the star lifecycle, and other worlds.",
+      "summary": "Webb 的四个主要科学主题为早期宇宙、星系演化、恒星生命周期和其他世界。",
+      "summary_en": "Webb’s four main science themes are the early universe, galaxies over time, the star lifecycle, and other worlds."
+    },
+    {
+      "id": "AST-S-ATMOSPHERE",
+      "title": "NASA · Webb 如何研究系外行星",
+      "title_en": "NASA · How Webb studies exoplanets",
+      "url": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/how-will-webb-study-exoplanets/",
+      "version": "observation",
+      "kind": "official-explainer",
+      "verified_at": "2026-10-20",
+      "excerpt": "透射光谱比较凌日期间与恒星本身的光谱，寻找行星大气对特定波长光的吸收，并与分子参考特征比对。",
+      "excerpt_en": "Transmission spectroscopy compares light during a transit with the star alone, looking for wavelength-specific absorption and comparing it with molecular reference signatures.",
+      "summary": "透射光谱比较凌日期间与恒星本身的光谱，寻找行星大气对特定波长光的吸收，并与分子参考特征比对。",
+      "summary_en": "Transmission spectroscopy compares light during a transit with the star alone, looking for wavelength-specific absorption and comparing it with molecular reference signatures."
+    },
+    {
+      "id": "AST-S-GJ486",
+      "title": "NASA · GJ 486 b 的透射光谱",
+      "title_en": "NASA · GJ 486 b transmission spectrum",
+      "url": "https://science.nasa.gov/asset/webb/exoplanet-gj-486-b-transmission-spectrum/",
+      "version": "observation",
+      "kind": "official-explainer",
+      "verified_at": "2026-10-20",
+      "excerpt": "这张 2023 年公布的光谱案例存在两种解释：富水行星大气或宿主恒星的星斑；页面说明还需额外波段观测。",
+      "excerpt_en": "This spectrum released in 2023 has two possible explanations: a water-rich planetary atmosphere or host-star spots. The source calls for observations at additional wavelengths.",
+      "summary": "这张 2023 年公布的光谱案例存在两种解释：富水行星大气或宿主恒星的星斑；页面说明还需额外波段观测。",
+      "summary_en": "This spectrum released in 2023 has two possible explanations: a water-rich planetary atmosphere or host-star spots. The source calls for observations at additional wavelengths.",
+      "published_at": "2023-05-01"
+    }
+  ],
+  "claims": [
+    {
+      "id": "AST-C-EXO-DEFINITION",
+      "topic": "exoplanet",
+      "title": "先从太阳系以外的世界开始",
+      "title_en": "Begin with worlds beyond our solar system",
+      "text": "环绕其他恒星运行的行星属于系外行星；该概念也包含不围绕恒星运行的流浪行星。",
+      "text_en": "Planets orbiting other stars are exoplanets; the category also includes rogue planets that do not orbit a star.",
+      "statement": "环绕其他恒星运行的行星属于系外行星；该概念也包含不围绕恒星运行的流浪行星。",
+      "statement_en": "Planets orbiting other stars are exoplanets; the category also includes rogue planets that do not orbit a star.",
+      "version": "overview",
+      "source_ids": [
+        "AST-S-EXOPLANET"
+      ]
+    },
+    {
+      "id": "AST-C-EXO-DIVERSITY",
+      "topic": "exoplanet",
+      "title": "系外行星并不都像地球",
+      "title_en": "Exoplanets are not all Earth-like",
+      "text": "系外行星涵盖比木星更大的气态巨行星与接近地球大小的岩石世界，温度和轨道也有很大差异。",
+      "text_en": "Exoplanets range from gas giants larger than Jupiter to rocky worlds near Earth’s size, with widely differing temperatures and orbits.",
+      "statement": "系外行星涵盖比木星更大的气态巨行星与接近地球大小的岩石世界，温度和轨道也有很大差异。",
+      "statement_en": "Exoplanets range from gas giants larger than Jupiter to rocky worlds near Earth’s size, with widely differing temperatures and orbits.",
+      "version": "overview",
+      "source_ids": [
+        "AST-S-EXOPLANET"
+      ]
+    },
+    {
+      "id": "AST-C-LIGHTYEAR-UNIT",
+      "topic": "lightyear",
+      "title": "光年是距离单位",
+      "title_en": "A light-year is a unit of distance",
+      "text": "光年表示光在一年中传播的距离，因此它是距离单位，不是时间单位。",
+      "text_en": "A light-year is the distance light travels in one year, so it is a unit of distance rather than time.",
+      "statement": "光年表示光在一年中传播的距离，因此它是距离单位，不是时间单位。",
+      "statement_en": "A light-year is the distance light travels in one year, so it is a unit of distance rather than time.",
+      "version": "overview",
+      "source_ids": [
+        "AST-S-LIGHTYEAR"
+      ]
+    },
+    {
+      "id": "AST-C-LIGHTYEAR-SCALE",
+      "topic": "lightyear",
+      "title": "一光年约为 9.46 万亿千米",
+      "title_en": "One light-year is about 9.46 trillion km",
+      "text": "NASA 的科普页将一光年近似表示为 9.46 万亿千米；这里的数值用于理解数量级。",
+      "text_en": "NASA’s explainer gives approximately 9.46 trillion kilometers per light-year; this rounded value conveys the scale.",
+      "statement": "NASA 的科普页将一光年近似表示为 9.46 万亿千米；这里的数值用于理解数量级。",
+      "statement_en": "NASA’s explainer gives approximately 9.46 trillion kilometers per light-year; this rounded value conveys the scale.",
+      "version": "overview",
+      "source_ids": [
+        "AST-S-LIGHTYEAR"
+      ]
+    },
+    {
+      "id": "AST-C-TRANSIT-DIP",
+      "topic": "transit",
+      "title": "从亮度下降寻找凌日",
+      "title_en": "Look for a dip in starlight",
+      "text": "当行星从我们视线方向经过恒星前方，会遮挡少量恒星光。凌日法寻找这种微小亮度下降。",
+      "text_en": "When a planet passes in front of a star along our line of sight, it blocks a little starlight. The transit method looks for this small brightness dip.",
+      "statement": "当行星从我们视线方向经过恒星前方，会遮挡少量恒星光。凌日法寻找这种微小亮度下降。",
+      "statement_en": "When a planet passes in front of a star along our line of sight, it blocks a little starlight. The transit method looks for this small brightness dip.",
+      "version": "observation",
+      "source_ids": [
+        "AST-S-TRANSIT"
+      ]
+    },
+    {
+      "id": "AST-C-TRANSIT-PERIOD",
+      "topic": "transit",
+      "title": "周期是解释轨道的线索",
+      "title_en": "Period helps constrain the orbit",
+      "text": "凌日观测可提供轨道周期；结合恒星质量，可以计算行星轨道的尺度。此样例没有执行观测拟合。",
+      "text_en": "Transit observations can provide an orbital period. Together with stellar mass, this constrains orbital scale. This sample does not fit observations.",
+      "statement": "凌日观测可提供轨道周期；结合恒星质量，可以计算行星轨道的尺度。此样例没有执行观测拟合。",
+      "statement_en": "Transit observations can provide an orbital period. Together with stellar mass, this constrains orbital scale. This sample does not fit observations.",
+      "version": "observation",
+      "source_ids": [
+        "AST-S-TRANSIT"
+      ]
+    },
+    {
+      "id": "AST-C-SPECTRUM-COMPOSITION",
+      "topic": "spectrum",
+      "title": "光谱将颜色变成成分线索",
+      "title_en": "Spectra connect wavelengths to composition",
+      "text": "光谱仪把光分解成不同波长，科学家根据光谱模式分析原子与分子的特征。",
+      "text_en": "A spectrograph separates light into wavelengths. Scientists analyze spectral patterns for signatures of atoms and molecules.",
+      "statement": "光谱仪把光分解成不同波长，科学家根据光谱模式分析原子与分子的特征。",
+      "statement_en": "A spectrograph separates light into wavelengths. Scientists analyze spectral patterns for signatures of atoms and molecules.",
+      "version": "observation",
+      "source_ids": [
+        "AST-S-SPECTRUM"
+      ]
+    },
+    {
+      "id": "AST-C-SPECTRUM-AMBIGUITY",
+      "topic": "spectrum",
+      "title": "相同信号可以有不同解释",
+      "title_en": "A signal can have competing explanations",
+      "text": "在 2023 年公布的 GJ 486 b 案例中，水蒸气线索既可能来自行星大气，也可能来自恒星星斑。这份历史材料不能单独确证行星大气；应保留替代解释与后续观测需求。",
+      "text_en": "In the GJ 486 b case released in 2023, hints of water vapor could come from a planetary atmosphere or stellar spots. This historical evidence alone does not establish a planetary atmosphere; competing explanations and the need for follow-up remain explicit.",
+      "statement": "在 2023 年公布的 GJ 486 b 案例中，水蒸气线索既可能来自行星大气，也可能来自恒星星斑。这份历史材料不能单独确证行星大气；应保留替代解释与后续观测需求。",
+      "statement_en": "In the GJ 486 b case released in 2023, hints of water vapor could come from a planetary atmosphere or stellar spots. This historical evidence alone does not establish a planetary atmosphere; competing explanations and the need for follow-up remain explicit.",
+      "version": "observation",
+      "source_ids": [
+        "AST-S-GJ486"
+      ]
+    },
+    {
+      "id": "AST-C-WEBB-THEMES",
+      "topic": "webb",
+      "title": "Webb 连接四个科学主题",
+      "title_en": "Webb connects four science themes",
+      "text": "Webb 的主要科学主题覆盖早期宇宙、星系演化、恒星生命周期，以及系外行星等其他世界。",
+      "text_en": "Webb’s main themes cover the early universe, galaxy evolution, the star lifecycle, and other worlds such as exoplanets.",
+      "statement": "Webb 的主要科学主题覆盖早期宇宙、星系演化、恒星生命周期，以及系外行星等其他世界。",
+      "statement_en": "Webb’s main themes cover the early universe, galaxy evolution, the star lifecycle, and other worlds such as exoplanets.",
+      "version": "overview",
+      "source_ids": [
+        "AST-S-WEBB"
+      ]
+    },
+    {
+      "id": "AST-C-WEBB-TRANSMISSION",
+      "topic": "webb",
+      "title": "用透射光谱探索大气",
+      "title_en": "Explore atmospheres with transmission spectra",
+      "text": "Webb 可以比较凌日时与恒星本身的光谱，分析哪些波长被吸收，再与分子参考特征比对。这是大气研究的方法，不自动构成生命存在的证明。",
+      "text_en": "Webb can compare transit spectra with the star alone, identify absorbed wavelengths, and compare them with molecular references. This is a method for studying atmospheres, not automatic proof of life.",
+      "statement": "Webb 可以比较凌日时与恒星本身的光谱，分析哪些波长被吸收，再与分子参考特征比对。这是大气研究的方法，不自动构成生命存在的证明。",
+      "statement_en": "Webb can compare transit spectra with the star alone, identify absorbed wavelengths, and compare them with molecular references. This is a method for studying atmospheres, not automatic proof of life.",
+      "version": "observation",
+      "source_ids": [
+        "AST-S-ATMOSPHERE"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "AST-A-TRANSIT",
+      "title": "一条光变曲线的阅读路线",
+      "title_en": "A route through a light curve",
+      "question": "凌日法如何发现系外行星？",
+      "question_en": "How does the transit method find exoplanets?",
+      "text": "阅读练习：先区分恒星、行星与视线方向，再追问亮度下降、周期与轨道尺度的关系。没有上传真实光变测量值。",
+      "text_en": "Reading exercise: identify the star, planet, and line of sight; then connect brightness dips, period, and orbital scale. No measured light curve is included.",
+      "topics": [
+        "exoplanet",
+        "transit"
+      ],
+      "source_ids": [
+        "AST-S-EXOPLANET",
+        "AST-S-TRANSIT"
+      ],
+      "kind": "field-note",
+      "origin": "curated-example",
+      "tags": [
+        "astronomy",
+        "public-lab"
+      ],
+      "wikilinks": []
+    },
+    {
+      "id": "AST-A-SPECTRUM",
+      "title": "从水信号到证据边界",
+      "title_en": "From a water signal to an evidence boundary",
+      "question": "GJ 486 b 的水信号能直接证明大气吗？",
+      "question_en": "Does the GJ 486 b water signal establish a planetary atmosphere?",
+      "text": "比较练习：把观测线索、行星大气解释、恒星星斑解释分开。记录能区分解释的新观测需求；不把历史案例当作最新结论。",
+      "text_en": "Comparison exercise: separate the observed hint, the atmospheric interpretation, and the stellar-spot interpretation. Record what follow-up could distinguish them; do not treat the historical case as the latest result.",
+      "topics": [
+        "spectrum",
+        "webb"
+      ],
+      "source_ids": [
+        "AST-S-GJ486",
+        "AST-S-ATMOSPHERE"
+      ],
+      "kind": "field-note",
+      "origin": "curated-example",
+      "tags": [
+        "astronomy",
+        "public-lab"
+      ],
+      "wikilinks": []
+    },
+    {
+      "id": "AST-A-DISTANCE",
+      "title": "为远方世界建立距离感",
+      "title_en": "Build a sense of cosmic distance",
+      "question": "光年是时间还是距离？",
+      "question_en": "Is a light-year time or distance?",
+      "text": "学习笔记：用光年表达距离，再回到天体的来源页核对定义与适用范围。此样例不提供实时天体目录。",
+      "text_en": "Learning note: express distance in light-years, then return to the source to verify definitions and scope. This sample does not provide a live celestial catalog.",
+      "topics": [
+        "lightyear",
+        "exoplanet"
+      ],
+      "source_ids": [
+        "AST-S-LIGHTYEAR",
+        "AST-S-EXOPLANET"
+      ],
+      "kind": "field-note",
+      "origin": "curated-example",
+      "tags": [
+        "astronomy",
+        "public-lab"
+      ],
+      "wikilinks": []
+    }
+  ]
+}

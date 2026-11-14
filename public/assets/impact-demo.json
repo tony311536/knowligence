@@ -1,0 +1,336 @@
+{
+  "schema_version": "1.0.0",
+  "contract_doc": "docs/impact-ui-contract.md",
+  "fixture_id": "c1-numpy-float-demo",
+  "fixture_title": "Knowligence Evidence-Backed Impact Demo",
+  "fixture_disclaimer": {
+    "zh": "本展示基于仓库自建的受控演示资料包（A.md、B.py、C.md），非扫描用户本地文件或第三方代码仓库，亦未调用外部在线服务。",
+    "en": "This demo is based on a repository-authored demonstration fixture (A.md, B.py, C.md). It does not scan user files or third-party repositories, and does not call external online services."
+  },
+  "available_versions": [
+    "1.26",
+    "2.0"
+  ],
+  "default_version": "2.0",
+  "official_sources": {
+    "S126-SCALARS": {
+      "id": "S126-SCALARS",
+      "title": "NumPy 1.26 · Scalars",
+      "title_en": "NumPy 1.26 · Scalars",
+      "url": "https://numpy.org/doc/1.26/reference/arrays.scalars.html",
+      "version": "1.26",
+      "kind": "official-docs",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：1.26 标量类型文档列出 float_ 与 complex_，分别对应 double 与 cdouble 的别名；该页也列出 float64 与 complex128 的位宽名称。",
+      "excerpt_en": "The 1.26 scalar documentation includes float_ and complex_ as aliases for double and cdouble. It also lists the bit-width names float64 and complex128.",
+      "summary": "中文释义：1.26 标量类型文档列出 float_ 与 complex_，分别对应 double 与 cdouble 的别名；该页也列出 float64 与 complex128 的位宽名称。",
+      "summary_en": "The 1.26 scalar documentation includes float_ and complex_ as aliases for double and cdouble. It also lists the bit-width names float64 and complex128."
+    },
+    "S20-MIGRATION": {
+      "id": "S20-MIGRATION",
+      "title": "NumPy 2.0 · 迁移指南",
+      "title_en": "NumPy 2.0 · Migration guide",
+      "url": "https://numpy.org/doc/2.0/numpy_2_0_migration_guide.html",
+      "version": "2.0",
+      "kind": "official-migration-guide",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：2.0 移除 float_、complex_，改用 float64、complex128；移除 ndarray.ptp 方法，改用 np.ptp(arr, ...)；NEP 50 改变标量类型提升，例如 np.float32(3) + 3.0 的结果现在为 float32。copy=False 的旧式用法多数可改写为 np.asarray，但需核对参数和复制意图。",
+      "excerpt_en": "NumPy 2.0 removes float_ and complex_, recommending float64 and complex128. It removes ndarray.ptp in favor of np.ptp. NEP 50 changes scalar promotion. Many old copy=False uses can use np.asarray after checking parameters and copy intent.",
+      "summary": "中文释义：2.0 移除 float_、complex_，改用 float64、complex128；移除 ndarray.ptp 方法，改用 np.ptp(arr, ...)；NEP 50 改变标量类型提升，例如 np.float32(3) + 3.0 的结果现在为 float32。copy=False 的旧式用法多数可改写为 np.asarray，但需核对参数和复制意图。",
+      "summary_en": "NumPy 2.0 removes float_ and complex_, recommending float64 and complex128. It removes ndarray.ptp in favor of np.ptp. NEP 50 changes scalar promotion. Many old copy=False uses can use np.asarray after checking parameters and copy intent."
+    }
+  },
+  "versions": {
+    "1.26": {
+      "target_version": "1.26",
+      "summary": {
+        "total_nodes": 3,
+        "total_edges": 1,
+        "review_required_nodes": 0,
+        "no_confirmed_impact_nodes": 3,
+        "author_declared_edges": 1,
+        "derived_review_edges": 0
+      },
+      "nodes": [
+        {
+          "id": "A",
+          "label": "A (A.md)",
+          "path": "A.md",
+          "format": "markdown",
+          "description": "Legacy advice recommending np.float_ under NumPy 1.26 with explicit official claim mapping.",
+          "status": "no_confirmed_impact",
+          "status_reason": "目标版本 1.26 与建议一致；在 1.26 下无已废弃 API 状态。",
+          "status_reason_en": "Target version 1.26 matches advice; no removed API status under 1.26.",
+          "curated_claims": [
+            {
+              "claim_id": "C126-FLOAT",
+              "topic": "float_",
+              "version": "1.26",
+              "title": "float_ 在 1.26 中可用",
+              "title_en": "float_ is available in 1.26",
+              "statement": "NumPy 1.26 仍提供 np.float_（double 的别名）；旧版文档中的用法不能无条件沿用到新版。",
+              "statement_en": "NumPy 1.26 provides np.float_ as an alias for double. Usage shown in older documentation does not automatically apply to a newer release.",
+              "source_ids": [
+                "S126-SCALARS"
+              ],
+              "line_start": 4,
+              "line_end": 5,
+              "expected_symbol": "np.float_",
+              "annotation_nature": "author_curated_mapping",
+              "line_excerpt": "In NumPy 1.26 environments, codebases routinely relied on `np.float_` as an alias for double-precision float.\nWhen targeting NumPy 1.26, developers were advised to use `np.float_` for scalar float conversions:"
+            },
+            {
+              "claim_id": "C20-FLOAT",
+              "topic": "float_",
+              "version": "2.0",
+              "title": "float_ 在 2.0 中移除",
+              "title_en": "float_ is removed in 2.0",
+              "statement": "NumPy 2.0 已移除 np.float_，官方建议改用 np.float64。",
+              "statement_en": "NumPy 2.0 removes np.float_; the official replacement is np.float64.",
+              "source_ids": [
+                "S20-MIGRATION"
+              ],
+              "line_start": 13,
+              "line_end": 13,
+              "expected_symbol": "np.float_",
+              "annotation_nature": "author_curated_mapping",
+              "line_excerpt": "Notice: In NumPy 2.0, `np.float_` is removed and migration to `np.float64` is required."
+            }
+          ],
+          "static_findings": [],
+          "author_declared_references": [],
+          "file_content": "# Demo Note A: Legacy Floating Point Guidance\n<!-- This is a repository-authored demonstration fixture for impact testing, not a third-party project file -->\n\nIn NumPy 1.26 environments, codebases routinely relied on `np.float_` as an alias for double-precision float.\nWhen targeting NumPy 1.26, developers were advised to use `np.float_` for scalar float conversions:\n\n```python\n# Legacy 1.26 advice\nval = np.float_(42.0)\n```\n\nOfficial version reference: [NumPy 1.26 Scalars](https://numpy.org/doc/1.26/reference/arrays.scalars.html)\nNotice: In NumPy 2.0, `np.float_` is removed and migration to `np.float64` is required.\n",
+          "ast_notice": null
+        },
+        {
+          "id": "B",
+          "label": "B (B.py)",
+          "path": "B.py",
+          "format": "python",
+          "description": "Python data processing script declaring knowledge-source: A.md and statically invoking np.float_.",
+          "status": "no_confirmed_impact",
+          "status_reason": "目标版本 1.26 与建议一致；在 1.26 下无已废弃 API 状态。",
+          "status_reason_en": "Target version 1.26 matches advice; no removed API status under 1.26.",
+          "curated_claims": [],
+          "static_findings": [],
+          "author_declared_references": [
+            {
+              "target_node_id": "A",
+              "target_file": "A.md",
+              "line": 3,
+              "marker": "# knowledge-source: A.md"
+            }
+          ],
+          "file_content": "# Demo Script B: Data Preprocessing Utility\n# This is a repository-authored demonstration fixture for impact testing, not a third-party project file.\n# knowledge-source: A.md\n\nimport numpy as np\n\n\ndef process_measurement(value):\n    # Apply scalar float conversion using advice from declared knowledge source\n    parsed = np.float_(value)\n    return parsed\n",
+          "ast_notice": "仅解析 Python AST，不执行、导入或改写所提交代码。结果是精选规则的审阅建议，不是完整类型推断或兼容性保证。 当前目标为 1.26，本次不报告 2.0 特有迁移风险；零发现不表示代码无其他问题。"
+        },
+        {
+          "id": "C",
+          "label": "C (C.md)",
+          "path": "C.md",
+          "format": "markdown",
+          "description": "General numerical precision analysis note without references or deprecated API calls.",
+          "status": "no_confirmed_impact",
+          "status_reason": "目标版本 1.26 与建议一致；在 1.26 下无已废弃 API 状态。",
+          "status_reason_en": "Target version 1.26 matches advice; no removed API status under 1.26.",
+          "curated_claims": [],
+          "static_findings": [],
+          "author_declared_references": [],
+          "file_content": "# Demo Note C: General Floating Point Precision Analysis\n<!-- This is a repository-authored demonstration fixture for impact testing, not a third-party project file -->\n\nFloating point precision across computational science often requires IEEE 754 compliance.\nDouble precision floating point representations use 64 bits (1 sign bit, 11 exponent bits, and 52 fraction bits).\nChoosing between single precision and double precision arithmetic involves trade-offs between memory footprint, cache line utilization, and numerical stability.\nThis note discusses floating point precision trade-offs in general numerical algorithms.\n",
+          "ast_notice": null
+        }
+      ],
+      "edges": [
+        {
+          "id": "author_declared_reference:B->A",
+          "source": "B",
+          "target": "A",
+          "type": "author_declared_reference",
+          "semantics": "File 'B' explicitly references 'A' as declared knowledge source. Author annotation, not runtime dependency.",
+          "evidence": {
+            "source_file": "B.py",
+            "target_file": "A.md",
+            "line": 3,
+            "marker": "# knowledge-source: A.md",
+            "marker_type": "python_comment_declaration"
+          }
+        }
+      ]
+    },
+    "2.0": {
+      "target_version": "2.0",
+      "summary": {
+        "total_nodes": 3,
+        "total_edges": 2,
+        "review_required_nodes": 2,
+        "no_confirmed_impact_nodes": 1,
+        "author_declared_edges": 1,
+        "derived_review_edges": 1
+      },
+      "nodes": [
+        {
+          "id": "A",
+          "label": "A (A.md)",
+          "path": "A.md",
+          "format": "markdown",
+          "description": "Legacy advice recommending np.float_ under NumPy 1.26 with explicit official claim mapping.",
+          "status": "review_required",
+          "status_reason": "目标适用版本 2.0 使该建议失效：官方 2.0 中移除了 float_。",
+          "status_reason_en": "Target version 2.0 invalidates advice: float_ is removed in 2.0.",
+          "curated_claims": [
+            {
+              "claim_id": "C126-FLOAT",
+              "topic": "float_",
+              "version": "1.26",
+              "title": "float_ 在 1.26 中可用",
+              "title_en": "float_ is available in 1.26",
+              "statement": "NumPy 1.26 仍提供 np.float_（double 的别名）；旧版文档中的用法不能无条件沿用到新版。",
+              "statement_en": "NumPy 1.26 provides np.float_ as an alias for double. Usage shown in older documentation does not automatically apply to a newer release.",
+              "source_ids": [
+                "S126-SCALARS"
+              ],
+              "line_start": 4,
+              "line_end": 5,
+              "expected_symbol": "np.float_",
+              "annotation_nature": "author_curated_mapping",
+              "line_excerpt": "In NumPy 1.26 environments, codebases routinely relied on `np.float_` as an alias for double-precision float.\nWhen targeting NumPy 1.26, developers were advised to use `np.float_` for scalar float conversions:"
+            },
+            {
+              "claim_id": "C20-FLOAT",
+              "topic": "float_",
+              "version": "2.0",
+              "title": "float_ 在 2.0 中移除",
+              "title_en": "float_ is removed in 2.0",
+              "statement": "NumPy 2.0 已移除 np.float_，官方建议改用 np.float64。",
+              "statement_en": "NumPy 2.0 removes np.float_; the official replacement is np.float64.",
+              "source_ids": [
+                "S20-MIGRATION"
+              ],
+              "line_start": 13,
+              "line_end": 13,
+              "expected_symbol": "np.float_",
+              "annotation_nature": "author_curated_mapping",
+              "line_excerpt": "Notice: In NumPy 2.0, `np.float_` is removed and migration to `np.float64` is required."
+            }
+          ],
+          "static_findings": [],
+          "author_declared_references": [],
+          "file_content": "# Demo Note A: Legacy Floating Point Guidance\n<!-- This is a repository-authored demonstration fixture for impact testing, not a third-party project file -->\n\nIn NumPy 1.26 environments, codebases routinely relied on `np.float_` as an alias for double-precision float.\nWhen targeting NumPy 1.26, developers were advised to use `np.float_` for scalar float conversions:\n\n```python\n# Legacy 1.26 advice\nval = np.float_(42.0)\n```\n\nOfficial version reference: [NumPy 1.26 Scalars](https://numpy.org/doc/1.26/reference/arrays.scalars.html)\nNotice: In NumPy 2.0, `np.float_` is removed and migration to `np.float64` is required.\n",
+          "ast_notice": null
+        },
+        {
+          "id": "B",
+          "label": "B (B.py)",
+          "path": "B.py",
+          "format": "python",
+          "description": "Python data processing script declaring knowledge-source: A.md and statically invoking np.float_.",
+          "status": "review_required",
+          "status_reason": "目标适用版本 2.0 AST 静态分析检测到已移除符号：['float_']。",
+          "status_reason_en": "Target version 2.0 static AST analysis detected removed symbol: ['float_'].",
+          "curated_claims": [],
+          "static_findings": [
+            {
+              "symbol": "float_",
+              "line": 10,
+              "line_text": "parsed = np.float_(value)",
+              "before": "np.float_",
+              "after": "np.float64",
+              "reason": "NumPy 2.0 移除 float_，官方建议使用 float64。",
+              "source_ids": [
+                "S20-MIGRATION"
+              ]
+            }
+          ],
+          "author_declared_references": [
+            {
+              "target_node_id": "A",
+              "target_file": "A.md",
+              "line": 3,
+              "marker": "# knowledge-source: A.md"
+            }
+          ],
+          "file_content": "# Demo Script B: Data Preprocessing Utility\n# This is a repository-authored demonstration fixture for impact testing, not a third-party project file.\n# knowledge-source: A.md\n\nimport numpy as np\n\n\ndef process_measurement(value):\n    # Apply scalar float conversion using advice from declared knowledge source\n    parsed = np.float_(value)\n    return parsed\n",
+          "ast_notice": "仅解析 Python AST，不执行、导入或改写所提交代码。结果是精选规则的审阅建议，不是完整类型推断或兼容性保证。 只追踪直接导入、简单赋值及可识别 NumPy 数组；动态绑定、跨函数数据流和未知类型的 .ptp() 可能漏报。"
+        },
+        {
+          "id": "C",
+          "label": "C (C.md)",
+          "path": "C.md",
+          "format": "markdown",
+          "description": "General numerical precision analysis note without references or deprecated API calls.",
+          "status": "no_confirmed_impact",
+          "status_reason": "在目标版本 2.0 下未检测到破坏性版本变更或静态调用。注：主题相似性并非已证实影响。",
+          "status_reason_en": "No breaking version changes or static usage detected under 2.0. Note: Topic similarity is not confirmed impact.",
+          "curated_claims": [],
+          "static_findings": [],
+          "author_declared_references": [],
+          "file_content": "# Demo Note C: General Floating Point Precision Analysis\n<!-- This is a repository-authored demonstration fixture for impact testing, not a third-party project file -->\n\nFloating point precision across computational science often requires IEEE 754 compliance.\nDouble precision floating point representations use 64 bits (1 sign bit, 11 exponent bits, and 52 fraction bits).\nChoosing between single precision and double precision arithmetic involves trade-offs between memory footprint, cache line utilization, and numerical stability.\nThis note discusses floating point precision trade-offs in general numerical algorithms.\n",
+          "ast_notice": null
+        }
+      ],
+      "edges": [
+        {
+          "id": "author_declared_reference:B->A",
+          "source": "B",
+          "target": "A",
+          "type": "author_declared_reference",
+          "semantics": "File 'B' explicitly references 'A' as declared knowledge source. Author annotation, not runtime dependency.",
+          "evidence": {
+            "source_file": "B.py",
+            "target_file": "A.md",
+            "line": 3,
+            "marker": "# knowledge-source: A.md",
+            "marker_type": "python_comment_declaration"
+          }
+        },
+        {
+          "id": "derived_review_candidate:A->B",
+          "source": "A",
+          "target": "B",
+          "type": "derived_review_candidate",
+          "semantics": "Derived review direction from deprecated advice in 'A' to downstream consumer 'B'. Supported by official 2.0 removal (C20-FLOAT) and confirmed static AST usage of 'float_'. Indicates candidate for manual review and unit test execution, not a runtime failure proof.",
+          "evidence": {
+            "trigger_claim_id": "C20-FLOAT",
+            "trigger_topic": "float_",
+            "trigger_title": "float_ 在 2.0 中移除",
+            "trigger_title_en": "float_ is removed in 2.0",
+            "trigger_statement": "NumPy 2.0 已移除 np.float_，官方建议改用 np.float64。",
+            "trigger_statement_en": "NumPy 2.0 removes np.float_; the official replacement is np.float64.",
+            "official_source_ids": [
+              "S20-MIGRATION"
+            ],
+            "reference_declaration": {
+              "source_file": "B.py",
+              "line": 3,
+              "marker": "# knowledge-source: A.md"
+            },
+            "static_findings": [
+              {
+                "file": "B.py",
+                "line": 10,
+                "symbol": "float_",
+                "before": "np.float_",
+                "after": "np.float64"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "engine": "EvidenceEngine & ImpactGraphAnalyzer (AST static analysis only)",
+    "execution_policy": "Zero execution or import of demo files or user code.",
+    "external_services": "None (standalone static analysis; no MOI/Memoria/LLM calls).",
+    "semantic_inference": "Author annotations (# knowledge-source) are explicit declarations, not inferred semantics.",
+    "topic_similarity_policy": "Topic similarity (e.g. C.md precision notes) is not confirmed impact.",
+    "safety_bounds": "File sizes capped at 512 KiB, AST code chars capped at 60,000."
+  },
+  "limitations": [
+    "静态 AST 分析仅追踪直接导入、简单别名赋值与可识别的顶级/模块属性访问。",
+    "不执行类型推断、动态绑定追踪或跨进程数据流分析；零发现不代表完全兼容。",
+    "C 节点展示一般数值精度说明，尚无已证实影响，'未发现影响'不代表兼容性保证。",
+    "作者声明引用（B->A）为代码/文档注释显式标记，非运行时包依赖关系。",
+    "建议复核边（A->B）为依据废弃声明与 AST 静态命中的建议复核方向，非运行时报错断言。"
+  ]
+}

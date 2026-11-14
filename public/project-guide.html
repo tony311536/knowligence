@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2866d1">
+  <meta name="description" content="Knowligence (知更) 评审与项目导览手册：面向开源数据栈与知识探索者的版本与证据感知工作台。">
+  <title>Knowligence (知更) — 评审与项目导览手册</title>
+  <link rel="icon" href="/assets/kiko-C1.png">
+  <script>
+    try {
+      document.documentElement.dataset.theme = JSON.parse(localStorage.getItem("knowligence:theme")) === "dark" ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <link rel="stylesheet" href="/atlas.css">
+  <style>
+    /* Standalone guide page styles adhering to atlas design tokens */
+    :root {
+      --guide-max-width: 1080px;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      height: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      padding: 8px 16px;
+      background: var(--primary);
+      color: var(--primary-ink);
+      border-radius: var(--radius-control);
+      font-weight: 600;
+      z-index: 1000;
+      transition: top 140ms ease;
+    }
+    .skip-link:focus {
+      top: 16px;
+      outline: 2px solid var(--focus);
+    }
+    .guide-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-small);
+    }
+    .guide-header-inner {
+      max-width: var(--guide-max-width);
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .guide-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .guide-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .guide-brand .brand-symbol {
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .guide-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--primary);
+      letter-spacing: 0.04em;
+    }
+    .guide-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .guide-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: var(--radius-control);
+      border: 1px solid var(--line);
+      background: var(--surface-raised);
+      color: var(--ink);
+      text-decoration: none;
+      cursor: pointer;
+      min-height: 38px;
+      min-width: 38px;
+      transition: background-color 140ms, border-color 140ms, transform 140ms;
+    }
+    .guide-btn:hover {
+      background: var(--surface-hover);
+      border-color: var(--control);
+    }
+    .guide-btn.primary {
+      background: var(--primary);
+      color: var(--primary-ink);
+      border-color: var(--primary);
+    }
+    .guide-btn.primary:hover {
+      opacity: 0.92;
+    }
+    .guide-btn:focus-visible {
+      outline: 2px solid var(--focus);
+    }
+    .guide-toc-bar {
+      background: var(--surface-raised);
+      border-bottom: 1px solid var(--line);
+    }
+    .guide-toc-inner {
+      max-width: var(--guide-max-width);
+      margin: 0 auto;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      font-size: 13px;
+    }
+    .guide-toc-label {
+      color: var(--faint);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .guide-toc-links {
+      display: flex;
+      gap: 12px;
+      white-space: nowrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .guide-toc-links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: var(--radius-control);
+      font-weight: 500;
+    }
+    .guide-toc-links a:hover {
+      color: var(--primary);
+      background: var(--surface-hover);
+    }
+    .guide-toc-links a:focus-visible {
+      outline: 2px solid var(--focus);
+    }
+    .guide-container {
+      max-width: var(--guide-max-width);
+      margin: 0 auto;
+      padding: 32px 24px 64px 24px;
+    }
+    .hero-section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-small);
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: 28px;
+      line-height: 1.3;
+      margin: 0 0 16px 0;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .hero-desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 24px 0;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--surface-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-control);
+      font-size: 12px;
+      color: var(--ink);
+    }
+    .hero-tag.positive {
+      background: var(--positive-bg);
+      color: var(--positive);
+      border-color: transparent;
+    }
+    .hero-tag.warning {
+      background: var(--warning-bg);
+      color: var(--warning);
+      border-color: transparent;
+    }
+    .guide-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-small);
+      scroll-margin-top: 110px;
+    }
+    .guide-card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .guide-card .section-sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 20px 0;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .subcard {
+      background: var(--surface-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-control);
+      padding: 18px;
+    }
+    .subcard h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .subcard p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .pill-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--primary-ink);
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+    .table-scroll {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-control);
+    }
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    .guide-table th, .guide-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .guide-table th {
+      background: var(--surface-raised);
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .guide-table tr:last-child td {
+      border-bottom: none;
+    }
+    .guide-table td.tag-col {
+      white-space: nowrap;
+    }
+    .notice-box {
+      border-left: 4px solid var(--primary);
+      background: var(--blue-light);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-control) var(--radius-control) 0;
+      margin: 16px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .notice-box.warning {
+      border-left-color: var(--warning);
+      background: var(--warning-bg);
+      color: var(--ink);
+    }
+    .notice-box.positive {
+      border-left-color: var(--positive);
+      background: var(--positive-bg);
+      color: var(--ink);
+    }
+    .notice-box p {
+      margin: 0;
+    }
+    .notice-box p + p {
+      margin-top: 8px;
+    }
+    .guide-footer {
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+      padding: 32px 24px;
+      margin-top: 48px;
+    }
+    .guide-footer-inner {
+      max-width: var(--guide-max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .guide-footer-links {
+      display: flex;
+      gap: 16px;
+    }
+    .guide-footer-links a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+    .guide-footer-links a:hover {
+      color: var(--ink);
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    /* Mobile responsive adjustments down to 390px */
+    @media (max-width: 600px) {
+      .guide-container {
+        padding: 16px 14px 48px 14px;
+      }
+      .hero-section {
+        padding: 20px 16px;
+      }
+      .hero-title {
+        font-size: 22px;
+      }
+      .hero-desc {
+        font-size: 14px;
+      }
+      .guide-card {
+        padding: 20px 16px;
+      }
+      .guide-header-inner {
+        padding: 10px 14px;
+      }
+      .guide-toc-inner {
+        padding: 8px 14px;
+      }
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .guide-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <div class="guide-brand-group">
+        <a href="/" class="guide-brand">
+          <span class="brand-symbol">k<span>•</span></span>Knowligence
+          <span class="guide-badge">评审导览手册</span>
+        </a>
+      </div>
+      <div class="guide-header-actions">
+        <a href="/" class="guide-btn" id="guide-return-btn" title="返回 Knowligence 探索工作台">
+          <span aria-hidden="true">←</span>
+          <span>返回工作台</span>
+        </a>
+        <button id="guide-theme-toggle" class="guide-btn" type="button" aria-label="切换明暗主题">
+          <span id="guide-theme-icon" aria-hidden="true">🌙</span>
+          <span class="sr-only">切换明暗主题</span>
+        </button>
+        <a href="https://knowligence-explorer.hal31415.chatgpt.site" target="_blank" rel="noopener noreferrer" class="guide-btn primary" title="打开公开在线演示站点">
+          <span>在线站点</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="guide-toc-bar" aria-label="导览目录">
+    <div class="guide-toc-inner">
+      <span class="guide-toc-label">导览导航：</span>
+      <ul class="guide-toc-links">
+        <li><a href="#overview">项目概览</a></li>
+        <li><a href="#problem">核心痛点</a></li>
+        <li><a href="#solution">解决方案</a></li>
+        <li><a href="#stack">技术栈全景</a></li>
+        <li><a href="#innovation">核心创新点</a></li>
+        <li><a href="#usage">使用步骤</a></li>
+        <li><a href="#labs">三大实验场</a></li>
+        <li><a href="#limits">能力边界与诚实承诺</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="guide-container">
+    <main id="main-content" tabindex="-1">
+      <!-- Section: Overview -->
+      <section class="hero-section" id="overview">
+        <span class="hero-eyebrow">Knowligence · Project Evaluator Guide</span>
+        <h1 class="hero-title">面向开源数据栈与知识探索者的版本与证据感知工作台</h1>
+        <p class="hero-desc">
+          在数据工程与专业文献频繁演进的场景中，Knowligence（知更）通过构建只读四层语义知识图谱，
+          限定目标版本与范围、对照精选官方出处、解释新旧差异（公网站点提供预置拓扑与静态影响示例；本地环境支持 Python AST 语法定位），
+          并在证据不足时严守 <strong>insufficient</strong> 诚实拒答边界。
+        </p>
+        <div class="hero-tags">
+          <span class="hero-tag positive">
+            <span aria-hidden="true">✓</span> 公开可访问 · 无需登录即可体验全部 3 大实验场与导览
+          </span>
+          <span class="hero-tag">
+            <span aria-hidden="true">🛡</span> 诚实拒答边界 · 超出收录范围时保守返回 insufficient
+          </span>
+          <span class="hero-tag">
+            <span aria-hidden="true">⚡</span> 纯前端轻量内核 · 零远端字体与无外部第三方依赖
+          </span>
+          <span class="hero-tag warning">
+            <span aria-hidden="true">⚖</span> 诚实披露 · 本地探索 / 受限在线精选 / 原生未接通服务严格分离
+          </span>
+        </div>
+      </section>
+
+      <!-- Section: Problem -->
+      <section class="guide-card" id="problem">
+        <h2><span>🎯</span> 核心痛点与行业背景 (The Problem)</h2>
+        <p class="section-sub">传统检索增强生成 (RAG) 与通用大模型在专业知识密集与版本敏感领域的三大失效根源</p>
+
+        <div class="grid-3">
+          <div class="subcard">
+            <h3><span>1.</span> 幻觉输出与黑盒结论</h3>
+            <p>
+              传统问答倾向于“合理猜测”，在面对专业参数、行业指南与版本升级条款时缺乏确定性出处锚点，导致结论看似顺畅实则难以核验。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>2.</span> 版本混淆与断代失效</h3>
+            <p>
+              技术库版本迭代（例如 NumPy 1.26 到 2.0）或合规准则更新时，API 废弃与行为变更是条件触发的。通用系统极易把旧规则强套在新版本上。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>3.</span> 缺乏边界与盲目作答</h3>
+            <p>
+              现有问答系统普遍缺失可靠的“证据边界（Evidence Boundary）”。在收录资料不足时盲目生成推断，直接给工程升级决策带来高危隐患。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Solution -->
+      <section class="guide-card" id="solution">
+        <h2><span>💡</span> 解决方案与产品架构 (The Solution)</h2>
+        <p class="section-sub">以“版本与证据感知”为核心，构建可追溯、可验证、有边界的立体化知识工作台</p>
+
+        <div class="grid-2">
+          <div class="subcard">
+            <h3><span>📐</span> 四层有向实体图谱</h3>
+            <p>
+              将离散信息解构为四大类型对象：<strong>来源文档 (Source)</strong> → <strong>知识声明 (Claim)</strong> → <strong>知识主题 (Topic)</strong> → <strong>工作资产 (Asset)</strong>，建立清晰的结构化脉络。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🔗</span> 官方出处与范围绑定</h3>
+            <p>
+              精选收录的声明绑定官方发布者、指南出处、适用版本或资料集范围与摘录原文，为展示结论提供可核对的出处线索。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🎨</span> 关系双重编码机制</h3>
+            <p>
+              通过线型与色彩双重编码：<strong>已证实支撑 (proven, 实线)</strong>、<strong>主题归属 (applies, 实线箭头)</strong> 与 <strong>候选结构关联 (candidate, 虚线)</strong>，严防未核验边被误认作事实。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🛡</span> 确定性拒答安全底线</h3>
+            <p>
+              当用户提出的问题超出当前实验场已收录的证据范围时，系统坚持给出 <strong>insufficient</strong> 拒答并展示证据缺口，不凭空捏造结论。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Technical Stack -->
+      <section class="guide-card" id="stack">
+        <h2><span>⚙️</span> 技术栈与工程全景 (Technical Stack)</h2>
+        <p class="section-sub">无依赖高性能纯前端内核、受限边缘在线筛选与本地只读安全分析的精巧组合</p>
+
+        <div class="table-scroll">
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>分层模块</th>
+                <th>核心技术与实现</th>
+                <th>设计考量与安全边界</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tag-col"><strong>前端计算内核</strong></td>
+                <td><code>web/atlas-core.js</code> 纯函数无框架内核，ESM 模块化，SVG 矢量拓扑与脑图渲染</td>
+                <td>无庞大前端框架运行时；零外部 CDN 脚本，离线即可运行核心推理与图谱布局计算。</td>
+              </tr>
+              <tr>
+                <td class="tag-col"><strong>设计与可访问性</strong></td>
+                <td>CSS 原生变量驱动的 Light / Dark 明暗主题，基础无障碍地标与语义标签，键盘焦点导航样式</td>
+                <td>无任何外部字体；手机 390px 紧凑视口下控制横向溢出，提供跳到主要内容跳链与可视焦点轮廓（未开展全设备屏幕阅读器认证）。</td>
+              </tr>
+              <tr>
+                <td class="tag-col"><strong>边缘与在线推理</strong></td>
+                <td>Cloudflare Sites Worker + D1 数据库限额管控，Genesis <code>qwen3.8-flash</code> 在线声明选择</td>
+                <td>全站共享每日 100 次额度（北京时间午夜刷新）；仅针对已收录的公开精选证据筛选声明；已有 1 次线上调用成功回执。</td>
+              </tr>
+              <tr>
+                <td class="tag-col"><strong>代码影响分析 (仅本地服务)</strong></td>
+                <td>Python 静态抽象语法树 (AST) 解析 (<code>/api/impact</code>，仅限本地开发环境服务)，模块与符号级静态扫描；公网演示站点使用预置静态样例数据展示</td>
+                <td>纯只读 AST 静态解析，<strong>绝不执行任何用户提交的代码</strong>，降低动态执行风险；注意 <code>/api/impact</code> 为本地 Python 服务专有接口，非公网静态站点能力。</td>
+              </tr>
+              <tr>
+                <td class="tag-col"><strong>本地状态管理</strong></td>
+                <td>浏览器 LocalStorage 存储个人导入的 Markdown 笔记与本地复核 (Review) 标记</td>
+                <td>所有笔记与复核状态仅驻留在当前客户端，不向云端传输，保障用户数据隐私。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Innovation -->
+      <section class="guide-card" id="innovation">
+        <h2><span>✨</span> 核心特色与创新点 (Key Innovations)</h2>
+        <p class="section-sub">把严肃的版本演化与知识溯源转化为直观易懂、诚实可信的探索体验</p>
+
+        <div class="grid-2">
+          <div class="subcard">
+            <h3><span>🏷</span> 1. 结构化证据链与生命周期范围感知</h3>
+            <p>
+              知识不是孤立静态的陈述。Knowligence 将结论与适用版本或资料集范围关联，在技术升级场景（如 NumPy 1.26.4 与 2.0.0）支持单版本查看与跨版本差异对比，并指出声明的适用生命周期与范围。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🛑</span> 2. 基于证据边界的保守拒答机制</h3>
+            <p>
+              拒答率不等于错误率，而是安全基石。离线预设规则在证据不足时给出 <strong>insufficient</strong> 响应，向用户如实反馈收录范围之外的证据缺口，避免脱离证据盲目推断。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🧭</span> 3. 探险式人机协同搭档 Captain Kiko</h3>
+            <p>
+              以可爱的“知识探险搭档 Captain Kiko”降低面对晦涩技术文档时的心理门槛。提供可预览的搭档换装衣橱与沉浸式引导，兼顾工程严肃性与探索趣味性。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🔍</span> 4. 彻底透明的诚实披露原则</h3>
+            <p>
+              系统明确区分本地浏览器探索、受限在线模型精选与未接通的远端后端服务，不在界面和文档中将本地数据包装为企业级云端历史，绝不进行虚假夸大。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Usage Steps -->
+      <section class="guide-card" id="usage">
+        <h2><span>🚀</span> 系统使用与评估指南 (Usage Steps)</h2>
+        <p class="section-sub">五步上手，完整体验从资料接入、图谱拓扑、版本对比到证据驱动问答的全流程</p>
+
+        <div class="subcard" style="margin-bottom: 14px;">
+          <h3><span class="pill-step">1</span> 切换工作空间实验场</h3>
+          <p>
+            点击左侧边栏顶部的“工作空间”切换按钮，可在“天文数据探险（默认）”、“绿色酒店能耗”和“NumPy 升级影响”三个实验场间无缝切换，加载对应精选语料。
+          </p>
+        </div>
+
+        <div class="subcard" style="margin-bottom: 14px;">
+          <h3><span class="pill-step">2</span> 探索知识图谱与层级脑图</h3>
+          <p>
+            在“知识图谱”中通过鼠标缩放、拖拽与点击节点查看四层对象连接；在“知识脑图”中按主题大纲层级收展；选择来源或声明节点可查看相关出处。
+          </p>
+        </div>
+
+        <div class="subcard" style="margin-bottom: 14px;">
+          <h3><span class="pill-step">3</span> 资产目录与本地笔记</h3>
+          <p>
+            在“资产目录”中检视收录的文档、声明、主题与代码资产；可导入本地 Markdown 笔记或自建笔记，笔记通过双向链接 <code>[[主题]]</code> 建立候选关系，内容仅存留于本地浏览器。
+          </p>
+        </div>
+
+        <div class="subcard" style="margin-bottom: 14px;">
+          <h3><span class="pill-step">4</span> 唤起 Captain Kiko 进行证据问答</h3>
+          <p>
+            点击右下角助手按钮唤出 Captain Kiko。输入问题后，系统默认执行本地确定性规则预设匹配，返回带出处引用的可靠回答；若超出范围则给出标准证据不足拒答。
+          </p>
+        </div>
+
+        <div class="subcard">
+          <h3><span class="pill-step">5</span> 可选在线模型声明筛选</h3>
+          <p>
+            若需由大模型辅助筛选证据，登录 ChatGPT 账号后主动点击「MOI 在线询问」，将在 Cloudflare Worker 限额内调用 Genesis 在线模型对现有精选证据进行受控声明筛选（全站每日共享 100 次限额，北京时间午夜重置；该功能仅为受控声明筛选，不提供自由生成或流式对话）。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section: Curated Labs -->
+      <section class="guide-card" id="labs">
+        <h2><span>🧪</span> 三大已收录精选公开实验场 (Curated Public Labs)</h2>
+        <p class="section-sub">基于精选公开资料构建的开源与行业示范资料集</p>
+
+        <div class="grid-3">
+          <div class="subcard">
+            <h3><span>🔭</span> 天文数据探险</h3>
+            <p>
+              <strong>默认实验场</strong>。基于 NASA 与 ESA/Webb 科研文献，收录系外行星定义与多样性、光年尺度、凌日现象观测及透射光谱分析等 7 条来源记录与 10 条精选声明（该资料集为单一科普知识集合，不包含软件版本划分）。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🏨</span> 酒店能耗与水资源基准</h3>
+            <p>
+              收录 <strong>6 份官方来源记录</strong>、<strong>4 篇指导文档</strong>（包括 U.S. EPA ENERGY STAR 2024 旅宿业巡检清单与 WaterSense H2Otel Challenge 等指导与评估资料，非强制法定标准）、<strong>11 条核心基准声明</strong>，涵盖基准评估与运营建议。
+            </p>
+          </div>
+          <div class="subcard">
+            <h3><span>🐍</span> NumPy 升级与迁移影响</h3>
+            <p>
+              涵盖 NumPy 1.26.4 与 2.0.0 的 5 大核心迁移主题、废弃别名清理与 C-API 变更，提供双版本双向对比；公网站点展示预置影响结构，本地环境支持 AST 静态代码检查。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Factual Limitations -->
+      <section class="guide-card" id="limits">
+        <h2><span>⚖️</span> 事实边界与诚实承诺 (Factual Limitations & Honesty Contract)</h2>
+        <p class="section-sub">坚持恪守工程实事求是原则，如实陈述当前实现边界，拒绝任何虚假宣传</p>
+
+        <div class="notice-box positive">
+          <p><strong>公开免登录使用：</strong>公开演示站点及本导览手册无需任何登录操作，所有用户均可直接体验 3 大实验场的完整图谱、脑图、资产检索与离线预设问答。</p>
+        </div>
+
+        <div class="notice-box">
+          <p><strong>离线预设与在线筛选区分：</strong>系统默认使用纯前端确定性规则进行离线预设问答，不依赖外部模型。可选的在线声明选择需登录 ChatGPT 账号，经 Sites Worker + D1 控制全站每日 100 次全局共享额度（北京时间午夜重置），且仅在已收录证据内受控筛选，已有 1 次线上成功调用回执；这与自由生成、流式对话及尚未接通的 MOI 原生搜索截然不同。</p>
+        </div>
+
+        <div class="notice-box warning">
+          <p><strong>未接通服务明确声明：</strong>MOI 原生文档知识库自动检索接口与 Memoria 云端记忆同步服务当前尚未接通，请勿将本地探索误认为已直连上述平台服务。用户在浏览器中记录的笔记和复核标记仅保存在客户端 LocalStorage，绝不可称作 Memoria 服务端真实历史记录。</p>
+          <p><strong>代码分析与公网静态边界：</strong><code>/api/impact</code> 依赖本地 Python 服务运行 AST 静态语法解析，不执行任何用户提交的代码；公网演示站点不包含 Python 运行时，仅提供静态预置的影响样例数据，避免将本地后端接口误认为公网在线能力。</p>
+          <p><strong>资料性质与无障碍边界说明：</strong>酒店资料（ENERGY STAR 清单与 WaterSense H2Otel）定位为行业指导文献而非强制法定标准；天文资料集无软件版本概念；页面提供基础无障碍属性与键盘支持，但未宣称通过完全 WAI-ARIA 认证或全设备屏幕阅读器兼容。</p>
+          <p><strong>恪守真实边界：</strong>系统采用受控结构化请求与确定性规则匹配，专注于已核查证据的事实关联；不宣称任何未证实的比赛提交状态、奖项、企业客户规模、商业节省金额或夸大基准指标。</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="guide-footer">
+    <div class="guide-footer-inner">
+      <div>
+        <strong>Knowligence (知更)</strong> · Every discovery, connected.
+        <span style="margin: 0 8px; opacity: 0.5;">/</span>
+        <span>MatrixNEXT 2026 创意赛道项目导览</span>
+      </div>
+      <div class="guide-footer-links">
+        <a href="/">返回探索工作台</a>
+        <a href="https://knowligence-explorer.hal31415.chatgpt.site" target="_blank" rel="noopener noreferrer">公开站点</a>
+        <a href="https://github.com/tony311536/moi" target="_blank" rel="noopener noreferrer">项目 GitHub 仓库</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle interaction for standalone guide page
+    (function() {
+      const toggleBtn = document.getElementById('guide-theme-toggle');
+      const themeIcon = document.getElementById('guide-theme-icon');
+
+      function updateIcon(theme) {
+        if (!themeIcon) return;
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+
+      const initialTheme = document.documentElement.dataset.theme || 'light';
+      updateIcon(initialTheme);
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+          const currentTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+          const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = nextTheme;
+          try {
+            localStorage.setItem('knowligence:theme', JSON.stringify(nextTheme));
+          } catch (e) {
+            // Ignore storage failures
+          }
+          updateIcon(nextTheme);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

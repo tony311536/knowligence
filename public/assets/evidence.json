@@ -1,0 +1,383 @@
+{
+  "metadata": {
+    "name": "Knowligence · NumPy 1.26 → 2.0 精选证据",
+    "curation": "curated：人工核对 NumPy 官方版本文档后整理的中文释义；不是实时抓取，也不是完整迁移指南。",
+    "verified_at": "2026-10-19",
+    "scope": [
+      "float_",
+      "complex_",
+      "copy=False",
+      "dtype promotion",
+      "ndarray.ptp"
+    ],
+    "license_note": "仅保存原创中文释义、来源链接及每个原始页面不超过25个英文词的短引述。",
+    "id": "numpy",
+    "name_en": "Knowligence · NumPy 1.26 → 2.0 curated evidence",
+    "title": "NumPy 迁移实验场",
+    "title_en": "NumPy migration lab",
+    "description": "沿着五类 API 变化，探索来源、声明与代码资产之间的关系。",
+    "description_en": "Follow five API changes through sources, claims, and code assets.",
+    "curation_en": "Curated paraphrases checked against official, version-specific NumPy documentation; not a live crawl or complete migration guide.",
+    "versionLabel": "版本",
+    "versionLabel_en": "Version",
+    "versionMode": "temporal",
+    "versions": [
+      {
+        "id": "1.26",
+        "label": "NumPy 1.26",
+        "label_en": "NumPy 1.26"
+      },
+      {
+        "id": "2.0",
+        "label": "NumPy 2.0",
+        "label_en": "NumPy 2.0"
+      }
+    ],
+    "topics": [
+      {
+        "id": "float_",
+        "label": "float_ / float64",
+        "label_en": "float_ / float64"
+      },
+      {
+        "id": "complex_",
+        "label": "complex_ / complex128",
+        "label_en": "complex_ / complex128"
+      },
+      {
+        "id": "copy",
+        "label": "copy=False · 复制语义",
+        "label_en": "copy=False · Copy semantics"
+      },
+      {
+        "id": "promotion",
+        "label": "dtype promotion",
+        "label_en": "dtype promotion"
+      },
+      {
+        "id": "ptp",
+        "label": "ndarray.ptp · 极差",
+        "label_en": "ndarray.ptp · Range"
+      }
+    ],
+    "suggestions": [
+      "np.float_ 在 2.0 中还能用吗？",
+      "copy=False 为什么抛 ValueError？",
+      "NumPy 1.26 与 2.0 的类型提升有什么变化？"
+    ],
+    "suggestions_en": [
+      "Is np.float_ available in 2.0?",
+      "Why does copy=False raise ValueError?",
+      "How did dtype promotion change from NumPy 1.26 to 2.0?"
+    ],
+    "license_note_en": "Original paraphrases, source links, and short quotations of at most 25 English words per original page.",
+    "sampleQuestion": "np.float_ 在 2.0 中还能用吗？",
+    "sampleQuestion_en": "Is np.float_ available in 2.0?",
+    "tagLine": "代码会迁移，证据要有版本。",
+    "tagLine_en": "Code evolves. Evidence needs a version.",
+    "prompts": [
+      {
+        "question": "np.float_ 在 2.0 中还能用吗？",
+        "question_en": "Is np.float_ available in 2.0?",
+        "label": "别名迁移",
+        "label_en": "Alias migration"
+      },
+      {
+        "question": "copy=False 为什么抛 ValueError？",
+        "question_en": "Why does copy=False raise ValueError?",
+        "label": "复制语义",
+        "label_en": "Copy semantics"
+      },
+      {
+        "question": "NumPy 1.26 与 2.0 的类型提升有什么变化？",
+        "question_en": "How did dtype promotion change from NumPy 1.26 to 2.0?",
+        "label": "类型提升",
+        "label_en": "Type promotion"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "S126-SCALARS",
+      "title": "NumPy 1.26 · Scalars",
+      "url": "https://numpy.org/doc/1.26/reference/arrays.scalars.html",
+      "version": "1.26",
+      "kind": "official-docs",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：1.26 标量类型文档列出 float_ 与 complex_，分别对应 double 与 cdouble 的别名；该页也列出 float64 与 complex128 的位宽名称。",
+      "quote": "Alias:",
+      "title_en": "NumPy 1.26 · Scalars",
+      "excerpt_en": "The 1.26 scalar documentation includes float_ and complex_ as aliases for double and cdouble. It also lists the bit-width names float64 and complex128.",
+      "summary": "中文释义：1.26 标量类型文档列出 float_ 与 complex_，分别对应 double 与 cdouble 的别名；该页也列出 float64 与 complex128 的位宽名称。",
+      "summary_en": "The 1.26 scalar documentation includes float_ and complex_ as aliases for double and cdouble. It also lists the bit-width names float64 and complex128."
+    },
+    {
+      "id": "S126-ARRAY",
+      "title": "NumPy 1.26 · numpy.array",
+      "url": "https://numpy.org/doc/1.26/reference/generated/numpy.array.html",
+      "version": "1.26",
+      "kind": "official-docs",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：1.26 的 array(copy=False) 尽量避免复制，但嵌套序列或 dtype、order 等要求仍可能使它复制；False 不是严格禁止复制。",
+      "quote": "a copy will only be made",
+      "title_en": "NumPy 1.26 · numpy.array",
+      "excerpt_en": "In 1.26, copy=False allows a copy when needed, including nested sequences or dtype/order requirements.",
+      "summary": "中文释义：1.26 的 array(copy=False) 尽量避免复制，但嵌套序列或 dtype、order 等要求仍可能使它复制；False 不是严格禁止复制。",
+      "summary_en": "In 1.26, copy=False allows a copy when needed, including nested sequences or dtype/order requirements."
+    },
+    {
+      "id": "S20-ARRAY",
+      "title": "NumPy 2.0 · numpy.array",
+      "url": "https://numpy.org/doc/2.0/reference/generated/numpy.array.html",
+      "version": "2.0",
+      "kind": "official-docs",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：2.0 中 copy=False 要求不复制，无法避免复制时抛出 ValueError；copy=None 表示必要时复制。默认 copy=True。",
+      "quote": "For False it raises a ValueError if a copy cannot be avoided.",
+      "title_en": "NumPy 2.0 · numpy.array",
+      "excerpt_en": "In 2.0, copy=False prohibits copying and raises ValueError when a copy cannot be avoided. copy=None permits a copy when necessary.",
+      "summary": "中文释义：2.0 中 copy=False 要求不复制，无法避免复制时抛出 ValueError；copy=None 表示必要时复制。默认 copy=True。",
+      "summary_en": "In 2.0, copy=False prohibits copying and raises ValueError when a copy cannot be avoided. copy=None permits a copy when necessary."
+    },
+    {
+      "id": "S126-PROMOTION",
+      "title": "NumPy 1.26 · numpy.result_type",
+      "url": "https://numpy.org/doc/1.26/reference/generated/numpy.result_type.html",
+      "version": "1.26",
+      "kind": "official-docs",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：1.26 的类型提升在标量与数组混用时，会考虑标量的实际值；文档解释了 min_scalar_type 与 promote_types 的组合规则。不能把这一规则直接用于 2.0。",
+      "quote": "the actual value of the scalar is taken into account",
+      "title_en": "NumPy 1.26 · numpy.result_type",
+      "excerpt_en": "The 1.26 scalar-and-array promotion rules take the scalar value into account. The documentation describes min_scalar_type and promote_types; these rules must not be assumed for 2.0.",
+      "summary": "中文释义：1.26 的类型提升在标量与数组混用时，会考虑标量的实际值；文档解释了 min_scalar_type 与 promote_types 的组合规则。不能把这一规则直接用于 2.0。",
+      "summary_en": "The 1.26 scalar-and-array promotion rules take the scalar value into account. The documentation describes min_scalar_type and promote_types; these rules must not be assumed for 2.0."
+    },
+    {
+      "id": "S20-MIGRATION",
+      "title": "NumPy 2.0 · 迁移指南",
+      "url": "https://numpy.org/doc/2.0/numpy_2_0_migration_guide.html",
+      "version": "2.0",
+      "kind": "official-migration-guide",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：2.0 移除 float_、complex_，改用 float64、complex128；移除 ndarray.ptp 方法，改用 np.ptp(arr, ...)；NEP 50 改变标量类型提升，例如 np.float32(3) + 3.0 的结果现在为 float32。copy=False 的旧式用法多数可改写为 np.asarray，但需核对参数和复制意图。",
+      "quote": "Use np.float64 instead. Use np.complex128 instead. Use np.ptp(arr, ...) instead.",
+      "title_en": "NumPy 2.0 · Migration guide",
+      "excerpt_en": "NumPy 2.0 removes float_ and complex_, recommending float64 and complex128. It removes ndarray.ptp in favor of np.ptp. NEP 50 changes scalar promotion. Many old copy=False uses can use np.asarray after checking parameters and copy intent.",
+      "summary": "中文释义：2.0 移除 float_、complex_，改用 float64、complex128；移除 ndarray.ptp 方法，改用 np.ptp(arr, ...)；NEP 50 改变标量类型提升，例如 np.float32(3) + 3.0 的结果现在为 float32。copy=False 的旧式用法多数可改写为 np.asarray，但需核对参数和复制意图。",
+      "summary_en": "NumPy 2.0 removes float_ and complex_, recommending float64 and complex128. It removes ndarray.ptp in favor of np.ptp. NEP 50 changes scalar promotion. Many old copy=False uses can use np.asarray after checking parameters and copy intent."
+    },
+    {
+      "id": "S126-PTP",
+      "title": "NumPy 1.26 · ndarray.ptp",
+      "url": "https://numpy.org/doc/1.26/reference/generated/numpy.ndarray.ptp.html",
+      "version": "1.26",
+      "kind": "official-docs",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：1.26 文档提供 ndarray.ptp(axis=None, out=None, keepdims=False)，计算指定轴的最大值与最小值之差；np.ptp 是对应函数。",
+      "quote": "Peak to peak (maximum - minimum) value along a given axis.",
+      "title_en": "NumPy 1.26 · ndarray.ptp",
+      "excerpt_en": "The 1.26 ndarray.ptp method computes the maximum minus minimum along an axis; np.ptp is the corresponding function.",
+      "summary": "中文释义：1.26 文档提供 ndarray.ptp(axis=None, out=None, keepdims=False)，计算指定轴的最大值与最小值之差；np.ptp 是对应函数。",
+      "summary_en": "The 1.26 ndarray.ptp method computes the maximum minus minimum along an axis; np.ptp is the corresponding function."
+    },
+    {
+      "id": "S20-PTP",
+      "title": "NumPy 2.0 · numpy.ptp",
+      "url": "https://numpy.org/doc/2.0/reference/generated/numpy.ptp.html",
+      "version": "2.0",
+      "kind": "official-docs",
+      "verified_at": "2026-10-19",
+      "excerpt": "中文释义：2.0 的 np.ptp(a, ...) 函数保留，用于计算极差；返回值保留输入 dtype，窄位宽有符号整数结果可能溢出。",
+      "quote": "ptp preserves the data type of the array.",
+      "title_en": "NumPy 2.0 · numpy.ptp",
+      "excerpt_en": "The np.ptp function remains in 2.0. It preserves the input dtype, so a narrow signed integer result can overflow.",
+      "summary": "中文释义：2.0 的 np.ptp(a, ...) 函数保留，用于计算极差；返回值保留输入 dtype，窄位宽有符号整数结果可能溢出。",
+      "summary_en": "The np.ptp function remains in 2.0. It preserves the input dtype, so a narrow signed integer result can overflow."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C126-FLOAT",
+      "topic": "float_",
+      "title": "float_ 在 1.26 中可用",
+      "text": "NumPy 1.26 仍提供 np.float_（double 的别名）；旧版文档中的用法不能无条件沿用到新版。",
+      "version": "1.26",
+      "source_ids": [
+        "S126-SCALARS"
+      ],
+      "title_en": "float_ is available in 1.26",
+      "text_en": "NumPy 1.26 provides np.float_ as an alias for double. Usage shown in older documentation does not automatically apply to a newer release.",
+      "statement": "NumPy 1.26 仍提供 np.float_（double 的别名）；旧版文档中的用法不能无条件沿用到新版。",
+      "statement_en": "NumPy 1.26 provides np.float_ as an alias for double. Usage shown in older documentation does not automatically apply to a newer release."
+    },
+    {
+      "id": "C20-FLOAT",
+      "topic": "float_",
+      "title": "float_ 在 2.0 中移除",
+      "text": "NumPy 2.0 已移除 np.float_，官方建议改用 np.float64。",
+      "version": "2.0",
+      "source_ids": [
+        "S20-MIGRATION"
+      ],
+      "title_en": "float_ is removed in 2.0",
+      "text_en": "NumPy 2.0 removes np.float_; the official replacement is np.float64.",
+      "statement": "NumPy 2.0 已移除 np.float_，官方建议改用 np.float64。",
+      "statement_en": "NumPy 2.0 removes np.float_; the official replacement is np.float64."
+    },
+    {
+      "id": "C126-COMPLEX",
+      "topic": "complex_",
+      "title": "complex_ 在 1.26 中可用",
+      "text": "NumPy 1.26 仍提供 np.complex_（cdouble 的别名）。",
+      "version": "1.26",
+      "source_ids": [
+        "S126-SCALARS"
+      ],
+      "title_en": "complex_ is available in 1.26",
+      "text_en": "NumPy 1.26 provides np.complex_ as an alias for cdouble.",
+      "statement": "NumPy 1.26 仍提供 np.complex_（cdouble 的别名）。",
+      "statement_en": "NumPy 1.26 provides np.complex_ as an alias for cdouble."
+    },
+    {
+      "id": "C20-COMPLEX",
+      "topic": "complex_",
+      "title": "complex_ 在 2.0 中移除",
+      "text": "NumPy 2.0 已移除 np.complex_，官方建议改用 np.complex128。",
+      "version": "2.0",
+      "source_ids": [
+        "S20-MIGRATION"
+      ],
+      "title_en": "complex_ is removed in 2.0",
+      "text_en": "NumPy 2.0 removes np.complex_; the official replacement is np.complex128.",
+      "statement": "NumPy 2.0 已移除 np.complex_，官方建议改用 np.complex128。",
+      "statement_en": "NumPy 2.0 removes np.complex_; the official replacement is np.complex128."
+    },
+    {
+      "id": "C126-COPY",
+      "topic": "copy",
+      "title": "1.26 的 copy=False 仍可能复制",
+      "text": "NumPy 1.26 的 np.array(..., copy=False) 允许在必要时复制，例如输入是嵌套序列，或 dtype、order 要求需要复制。",
+      "version": "1.26",
+      "source_ids": [
+        "S126-ARRAY"
+      ],
+      "title_en": "copy=False may still copy in 1.26",
+      "text_en": "NumPy 1.26 np.array(..., copy=False) may copy when required, for example with nested sequences or dtype/order requirements.",
+      "statement": "NumPy 1.26 的 np.array(..., copy=False) 允许在必要时复制，例如输入是嵌套序列，或 dtype、order 要求需要复制。",
+      "statement_en": "NumPy 1.26 np.array(..., copy=False) may copy when required, for example with nested sequences or dtype/order requirements."
+    },
+    {
+      "id": "C20-COPY",
+      "topic": "copy",
+      "title": "2.0 的 copy=False 严格禁止复制",
+      "text": "NumPy 2.0 的 np.array(..., copy=False) 在无法避免复制时抛出 ValueError。若意图是必要时复制，可考虑 copy=None；跨 1.26/2.0 的旧代码通常优先考虑 np.asarray(...)，但要核对参数和语义。",
+      "version": "2.0",
+      "source_ids": [
+        "S20-ARRAY",
+        "S20-MIGRATION"
+      ],
+      "title_en": "copy=False forbids copying in 2.0",
+      "text_en": "NumPy 2.0 np.array(..., copy=False) raises ValueError if copying cannot be avoided. Consider copy=None when copying is acceptable if needed. For code spanning 1.26 and 2.0, np.asarray is often suitable, after checking parameters and semantics.",
+      "statement": "NumPy 2.0 的 np.array(..., copy=False) 在无法避免复制时抛出 ValueError。若意图是必要时复制，可考虑 copy=None；跨 1.26/2.0 的旧代码通常优先考虑 np.asarray(...)，但要核对参数和语义。",
+      "statement_en": "NumPy 2.0 np.array(..., copy=False) raises ValueError if copying cannot be avoided. Consider copy=None when copying is acceptable if needed. For code spanning 1.26 and 2.0, np.asarray is often suitable, after checking parameters and semantics."
+    },
+    {
+      "id": "C126-PROMOTION",
+      "topic": "promotion",
+      "title": "1.26 的类型提升考虑标量值",
+      "text": "NumPy 1.26 在标量与数组混用的类型提升中，会考虑标量的实际值；这一旧版规则不能作为 2.0 行为的依据。",
+      "version": "1.26",
+      "source_ids": [
+        "S126-PROMOTION"
+      ],
+      "title_en": "Promotion considers scalar values in 1.26",
+      "text_en": "NumPy 1.26 considers scalar values when promoting mixed scalar and array operands. This older rule does not establish the behavior of 2.0.",
+      "statement": "NumPy 1.26 在标量与数组混用的类型提升中，会考虑标量的实际值；这一旧版规则不能作为 2.0 行为的依据。",
+      "statement_en": "NumPy 1.26 considers scalar values when promoting mixed scalar and array operands. This older rule does not establish the behavior of 2.0."
+    },
+    {
+      "id": "C20-PROMOTION",
+      "topic": "promotion",
+      "title": "2.0 的标量提升遵循 NEP 50",
+      "text": "NumPy 2.0 按 NEP 50 调整类型提升并一致保留标量精度。例：np.float32(3) + 3.0 的结果为 float32；应显式决定 dtype，并验证数值精度和溢出边界。",
+      "version": "2.0",
+      "source_ids": [
+        "S20-MIGRATION"
+      ],
+      "title_en": "Scalar promotion follows NEP 50 in 2.0",
+      "text_en": "NumPy 2.0 changes promotion under NEP 50 and consistently preserves scalar precision. For example, np.float32(3) + 3.0 produces float32. Choose dtype explicitly and test precision and overflow boundaries.",
+      "statement": "NumPy 2.0 按 NEP 50 调整类型提升并一致保留标量精度。例：np.float32(3) + 3.0 的结果为 float32；应显式决定 dtype，并验证数值精度和溢出边界。",
+      "statement_en": "NumPy 2.0 changes promotion under NEP 50 and consistently preserves scalar precision. For example, np.float32(3) + 3.0 produces float32. Choose dtype explicitly and test precision and overflow boundaries."
+    },
+    {
+      "id": "C126-PTP",
+      "topic": "ptp",
+      "title": "1.26 有 ndarray.ptp 方法",
+      "text": "NumPy 1.26 的数组支持 arr.ptp(...) 方法；它计算最大值减最小值，对应的函数形式为 np.ptp(arr, ...)。",
+      "version": "1.26",
+      "source_ids": [
+        "S126-PTP"
+      ],
+      "title_en": "ndarray.ptp exists in 1.26",
+      "text_en": "NumPy 1.26 arrays support arr.ptp(...), computing maximum minus minimum. Its function counterpart is np.ptp(arr, ...).",
+      "statement": "NumPy 1.26 的数组支持 arr.ptp(...) 方法；它计算最大值减最小值，对应的函数形式为 np.ptp(arr, ...)。",
+      "statement_en": "NumPy 1.26 arrays support arr.ptp(...), computing maximum minus minimum. Its function counterpart is np.ptp(arr, ...)."
+    },
+    {
+      "id": "C20-PTP",
+      "topic": "ptp",
+      "title": "2.0 改用 np.ptp 函数",
+      "text": "NumPy 2.0 已移除 ndarray.ptp 方法，应改用 np.ptp(arr, ...)。np.ptp 函数仍保留；窄位宽整数极差还需检查溢出。",
+      "version": "2.0",
+      "source_ids": [
+        "S20-MIGRATION",
+        "S20-PTP"
+      ],
+      "title_en": "Use the np.ptp function in 2.0",
+      "text_en": "NumPy 2.0 removes ndarray.ptp. Use np.ptp(arr, ...) instead; this function remains available. Check overflow when computing ranges with narrow integer dtypes.",
+      "statement": "NumPy 2.0 已移除 ndarray.ptp 方法，应改用 np.ptp(arr, ...)。np.ptp 函数仍保留；窄位宽整数极差还需检查溢出。",
+      "statement_en": "NumPy 2.0 removes ndarray.ptp. Use np.ptp(arr, ...) instead; this function remains available. Check overflow when computing ranges with narrow integer dtypes."
+    }
+  ],
+  "assets": [
+    {
+      "id": "A-ALIASES",
+      "title": "旧别名与极差",
+      "question": "NumPy 1.26 升级 2.0 后 float_、complex_ 和 ptp 有什么变化？",
+      "code": "import numpy as np\na = np.array([1, 2, 3], dtype=np.float_)\nz = np.complex_(1 + 2j)\nspread = a.ptp()\n",
+      "source_ids": [
+        "S126-SCALARS",
+        "S126-PTP",
+        "S20-MIGRATION"
+      ],
+      "title_en": "Old aliases and array range",
+      "question_en": "What changed for float_, complex_, and ptp when migrating NumPy 1.26 to 2.0?"
+    },
+    {
+      "id": "A-COPY",
+      "title": "copy=False 的语义漂移",
+      "question": "同样是 copy=False，为什么 NumPy 2.0 抛 ValueError？",
+      "code": "import numpy as np\na = np.array([1, 2, 3], copy=False)\n",
+      "source_ids": [
+        "S126-ARRAY",
+        "S20-ARRAY",
+        "S20-MIGRATION"
+      ],
+      "title_en": "The meaning of copy=False changed",
+      "question_en": "Why does the same copy=False call raise ValueError in NumPy 2.0?"
+    },
+    {
+      "id": "A-PROMOTION",
+      "title": "结果能算，dtype 变了",
+      "question": "NumPy 2.0 的 dtype promotion 与 1.26 有何不同？",
+      "code": "import numpy as np\nresult = np.float32(3) + 3.0\n",
+      "source_ids": [
+        "S126-PROMOTION",
+        "S20-MIGRATION"
+      ],
+      "title_en": "The result works, but dtype changed",
+      "question_en": "How does dtype promotion differ between NumPy 1.26 and 2.0?"
+    }
+  ]
+}
